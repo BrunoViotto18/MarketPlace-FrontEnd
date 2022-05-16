@@ -8,6 +8,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: '', component: ProductsListComponent},
+      {path: '',component:ProductsListComponent},
       {path: 'product/:productID', component: ProductDetailComponent}
     ])
   ],

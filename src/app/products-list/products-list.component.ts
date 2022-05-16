@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { products } from '../products';
 import axios from "axios";
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbb13fedde5f2b72c8003de398f21404bdc206be
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -11,7 +14,6 @@ import axios from "axios";
 export class ProductsListComponent implements OnInit {
 
   products = products;
-
   constructor() { }
 
   ngOnInit(): void {

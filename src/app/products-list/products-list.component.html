@@ -6,11 +6,17 @@
         <h3>
             <a [title]="product.name + 'details'" [routerLink]="['/product', product.id]">{{product.name}}</a>
         </h3>
+        
         <h2>
-            <p>{{product.price | currency:'BRL'}}</p>
+            <p>
+                {{product.price | currency:'BRL'}}
+            </p>
         </h2>
+
         <h2>
-            <p>{{product.description}}</p>
+            <p>
+                {{product.description}}
+            </p>
         </h2>
         <div class="material-symbols-outlined">favorite</div>
     </div>
