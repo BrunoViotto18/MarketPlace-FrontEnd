@@ -26,57 +26,33 @@ export interface Product {
     },
     {
       id: 4,
-      name: 'Phone XL',
-      price: 799,
+      name: 'Phone Max',
+      price: 700,
       description: 'A large phone with one of the best screens'
     },
     {
       id: 5,
-      name: 'Phone Mini',
-      price: 699,
+      name: 'Phone Small',
+      price: 350,
       description: 'A great phone with one of the best cameras'
+    },
+    {
+      id: 5,
+      name: 'Phone Regular',
+      price: 600,
+      description: ''
     },
     {
       id: 6,
-      name: 'Phone Standard',
-      price: 299,
-      description: ''
+      name: 'Phone Max',
+      price: 700,
+      description: 'A large phone with one of the best screens'
     },
     {
       id: 7,
-      name: 'Phone XL',
-      price: 799,
-      description: 'A large phone with one of the best screens'
-    },
-    {
-      id: 8,
-      name: 'Phone Mini',
-      price: 699,
+      name: 'Phone Small',
+      price: 350,
       description: 'A great phone with one of the best cameras'
-    },
-    {
-      id: 9,
-      name: 'Phone Standard',
-      price: 299,
-      description: ''
-    },
-    {
-      id: 10,
-      name: 'Phone XL',
-      price: 799,
-      description: 'A large phone with one of the best screens'
-    },
-    {
-      id: 11,
-      name: 'Phone Mini',
-      price: 699,
-      description: 'A great phone with one of the best cameras'
-    },
-    {
-      id: 12,
-      name: 'Phone Standard',
-      price: 299,
-      description: ''
     }
   ];
   
