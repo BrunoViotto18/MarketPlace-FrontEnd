@@ -1,3 +1,7 @@
+:root{
+  --HeartFill: 0;
+}
+
 /* You can add global styles to this file, and also import other style files */
 *,
 *::before,
@@ -147,6 +151,7 @@ app-top-bar h1 {
 .productsList{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+  grid-template-rows: repeat(auto-fit, 1fr);
   justify-content: center;
   width: 85vw;
   margin-inline: auto;
@@ -163,16 +168,24 @@ app-top-bar h1 {
   box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.308);
 }
 
-.productImageName{
-  display: flex;
-}
-
-.productImageName > img{
-  height: min(200px, 90vw);
+.productComponent > img{
+  align-self: center;
+  width: min(200px, 90%);
   aspect-ratio: 1 / 1;
 }
 
-.productImageName > h3{
-  margin-left: 10px;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' var(--HeartFill),
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48;
+  width: fit-content;
+  color: red;
 }
+
+/*.material-symbols-outlined:hover{
+  --HeartFill: 1;
+  cursor: pointer;
+}*/
  
