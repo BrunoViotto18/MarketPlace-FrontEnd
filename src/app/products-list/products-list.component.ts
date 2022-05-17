@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { products } from '../products';
 import axios from "axios";
-<<<<<<< HEAD
 
-=======
->>>>>>> cbb13fedde5f2b72c8003de398f21404bdc206be
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -33,16 +30,3 @@ export class ProductsListComponent implements OnInit {
     });
   }
 }
-
-function fillHeart(){
-  console.log(style.getPropertyValue('--HeartFill'))
-  if (style.getPropertyValue('--HeartFill') == '0')
-    style.setProperty('--HeartFill', '1')
-}
-
-const style = window.getComputedStyle(window.document.body)
-const heart = document.body.querySelector('.material-symbols-outlined')
-
-console.log(style.getPropertyValue('--HeartFill'))
-
-heart?.addEventListener('click', fillHeart)
