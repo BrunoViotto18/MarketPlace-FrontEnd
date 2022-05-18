@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     color: #616161;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -23,26 +23,28 @@
   /* Text */
   
   h1 {
-    font-size: 32px;
+    font-size: 25px;
   }
   
   h2 {
-    font-size: 20px;
+    font-size: 15px;
+    margin: 3% 0;
+    
   }
-  
-  h1, h2 {
-    font-weight: lighter;
-  }
+
   
   p {
-    font-size: 14px;
+    font-weight:bold;
+    font-family:Muli;
+    font-size: 26px;
+    color: rgb(75, 75, 75);
   }
   
   /* Hyperlink */
   
   a {
     cursor: pointer;
-    color: #1976d2;
+    color: #868686;
     text-decoration: none;
   }
   
@@ -108,7 +110,7 @@
   app-top-bar {
     width: 100%;
     height: 68px;
-    background-color: #1976d2;
+    background-color: #253f5a;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -139,34 +141,45 @@
  
   .productsList{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 370px));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+    grid-template-rows: repeat(auto-fit, 1fr);
     justify-content: center;
     width: 85vw;
     margin-inline: auto;
-    gap: 20px;
+    gap: 30px;
   }
 
   .productComponent{
-    padding: 10px;
+    padding: 15px;
     background: white;
     display: flex;
-    gap: 20px;
-    flex-direction:column ;
+    gap: 5px;
+    flex-direction:column;
     flex-basis: 300px;
     flex-grow: 1;
-    border-radius: 10px;
-    border:solid 1px rgba(128, 128, 128, 0.466);
-    box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.288);
-
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.582);
+    transition: transform 100ms;
   }
 
-  .productImageName{
-    display:flex;
-  }
-  .productImageName > img{
-    height: min(200px,50vw);
+  .productComponent>img{
+    align-self: center;
+    width: min(200px,90%);
     aspect-ratio: 1/1;
+    margin: 5% 0;
   }
-  .productImageName > h3{
-    border-left: 10px;
+
+ 
+  .productComponent:hover{
+    box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.425);
+    transform: scale(1.03);
+  }
+
+  .textoverflow{
+    text-overflow:ellipsis;
+    overflow:hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: normal;
   }
