@@ -30,3 +30,5 @@ export class ProductsListComponent implements OnInit {
     });
   }
 }
+
+const heart:HTMLDivElement|null = document.body.querySelector('.app-heart-button')
