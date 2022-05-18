@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { HeartButtonComponent } from './heart-button/heart-button.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AppComponent,
     TopBarComponent,
     ProductsListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    HeartButtonComponent
   ],
   imports: [
     BrowserModule,
