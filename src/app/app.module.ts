@@ -8,6 +8,8 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HeartButtonComponent } from './heart-button/heart-button.component';
+import { CustomButtonComponent } from './custom-button/custom-button.component';
+import { AddressRegisterComponent } from './address-register/address-register.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HeartButtonComponent } from './heart-button/heart-button.component';
     TopBarComponent,
     ProductsListComponent,
     ProductDetailComponent,
-    HeartButtonComponent
+    HeartButtonComponent,
+    CustomButtonComponent,
+    AddressRegisterComponent
   ],
   imports: [
     BrowserModule,

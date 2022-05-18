@@ -11,7 +11,7 @@ import { Product, products } from '../products';
 })
 
 export class ProductDetailComponent implements OnInit {
-  titlePage="ProductDetail"
+  titlePage="Product Detail"
   product: Product | undefined
   constructor(private route: ActivatedRoute) { }
 
@@ -19,10 +19,7 @@ export class ProductDetailComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const porductIdFromroute = Number(routeParams.get('productID'));
     this.product = products.find(product => product.id === porductIdFromroute);
-
-    
   }
-
 }
 
 

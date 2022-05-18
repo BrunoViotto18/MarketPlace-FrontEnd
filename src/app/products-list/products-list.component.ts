@@ -14,6 +14,7 @@ export class ProductsListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
     var config = {
       method: 'get',
       url: 'http://localhost:5164/Product/all',
@@ -30,5 +31,3 @@ export class ProductsListComponent implements OnInit {
     });
   }
 }
-
-const heart:HTMLDivElement|null = document.body.querySelector('.app-heart-button')

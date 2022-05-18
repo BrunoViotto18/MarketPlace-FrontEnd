@@ -6,7 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-  @Input() titulo = ""
+  @Input()
+  titulo = ""
   constructor() { }
 
   ngOnInit(): void {
