@@ -11,22 +11,8 @@ export interface Product {
       id: 1,
       name: 'Phone XL',
       price: 799,
-      image: 'a',
-      description: 'A large phone with one of the best screens'
-    },
-    {
-      id: 2,
-      name: 'Phone Mini',
-      price: 699,
-      image: 'a',
-      description: 'A great phone with one of the best cameras'
-    },
-    {
-      id: 3,
-      name: 'Phone Standard',
-      price: 299,
-      image: 'a',
-      description: ''
+      description: 'A large phone with one of the best screens',
+      image: "a"
     }
   ];
   

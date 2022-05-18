@@ -1,22 +1,18 @@
 <div class="productsList">
-    <div class="productComponent" *ngFor="let product of products">
-        <img src={{product.image}} alt="Produto">
-        <h3>
-            <a [title]="product.name + ' details'" [routerLink]="['/product', product.id]">{{product.name}}</a>
-        </h3>
-        
+    <div class="productComponent" *ngFor="let product of products" [routerLink]="['/product',product.id]">
+        <img src={{product.image}} alt="">
         <h2>
             <p>
                 {{product.price | currency:'BRL'}}
             </p>
         </h2>
-
-        <h2>
-            <p>
+        <h3>
+            <a [title]="product.name + 'details'">
+                {{product.name}}
+            </a>
+        </h3>
+        <h2 class="textoverflow">
                 {{product.description}}
-            </p>
         </h2>
-        
-        <app-heart-button></app-heart-button>
     </div>
 </div>
