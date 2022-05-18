@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product, products } from '../products';
-
+import axios from 'axios';
 
 
 @Component({
@@ -18,7 +18,24 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const porductIdFromroute = Number(routeParams.get('productID'));
-    this.product = products.find(product => product.id === porductIdFromroute);
+    
+    var config = {
+      method: 'get',
+      url: 'http://localhost:5164/Product/all',
+      headers: { },
+    };
+    
+    var instance = this;
+    axios(config)
+    .then(function (response:any) {
+      var products = response.data as Array<Product>;
+      instance.product = products.find(p => p.id === porductIdFromroute)
+    })
+    .catch(function (error:any) {
+      console.log(error);
+    });
+
+    //this.product = products.find(product => product.id === porductIdFromroute);
   }
 }
 
