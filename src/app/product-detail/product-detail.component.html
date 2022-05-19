@@ -1,7 +1,14 @@
 <!-- <app-top-bar  [título] ="titlePage"></app-top-bar> -->
-<div *ngIf="product">
-    <h3>{{product.name}}</h3>
-    <h4>{{product.price | currency}}</h4>
-    <
-    <p>{{product.description}}</p>
+<div *ngIf="product" class="details">
+    <img src={{product.image}} alt="">
+    <div class="fontformatting">
+        <!-- <p>{{product.description}}</p> -->
+        <h1>{{product.name}}</h1>
+        <h2>{{product.price  | currency:'BRL'}}</h2>
+        <div class="baguio">
+            
+            <button type="button">Comprar</button>
+        </div>
+        
+    </div>
 </div>

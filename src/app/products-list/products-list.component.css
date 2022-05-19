@@ -1,0 +1,11 @@
+.btns{
+    display: flex;
+    gap: 5px;
+    align-self: center;
+}
+
+button{
+    padding: 7px 15px;
+    font-size:18px;
+    letter-spacing: 0.8px;
+}
