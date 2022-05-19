@@ -1,1 +1,15 @@
+<div class="address-register">
+    <div class="address-register-container">
+
+        <div *ngFor="let placeholder of placeholders">
+            <app-custom-input [placeholder]="placeholder"></app-custom-input>
+        </div>
+
+        <div class="address-register-buttons">
+            <button class="">SaveChanges</button>
+            <button class="">Cancel</button>
+        </div>
+        
+    </div>
+</div>
 

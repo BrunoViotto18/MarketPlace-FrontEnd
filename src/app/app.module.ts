@@ -10,6 +10,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HeartButtonComponent } from './heart-button/heart-button.component';
 import { CustomButtonComponent } from './custom-button/custom-button.component';
 import { AddressRegisterComponent } from './address-register/address-register.component';
+import { CustomInputComponent } from './custom-input/custom-input.component';
 
 
 @NgModule({
@@ -20,14 +21,16 @@ import { AddressRegisterComponent } from './address-register/address-register.co
     ProductDetailComponent,
     HeartButtonComponent,
     CustomButtonComponent,
-    AddressRegisterComponent
+    AddressRegisterComponent,
+    CustomInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '',component:ProductsListComponent},
-      {path: 'product/:productID', component: ProductDetailComponent}
+      {path: 'product/:productID', component:ProductDetailComponent},
+      {path: 'address-register', component:AddressRegisterComponent}
     ])
   ],
   providers: [],
