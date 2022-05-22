@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddressRegisterComponent implements OnInit {
 
   placeholders = [
-    "Cidade",
+    "Rua",
     "Código Postal",
     "Estado",
     "Cidade",

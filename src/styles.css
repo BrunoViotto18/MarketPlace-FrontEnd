@@ -25,9 +25,10 @@ body{
   flex-direction:column;
 }
 
-router-outlet + *  {
+/* router-outlet + *  {
   padding: 0 16px;
-}
+} */
+
 
 /* Text */
 
@@ -47,6 +48,7 @@ p {
   font-size: 14px;
 }
 
+
 /* Hyperlink */
 
 a {
@@ -59,25 +61,28 @@ a:hover {
   opacity: 0.8;
 }
 
+
 /* Input */
 
 input {
   font-size: 14px;
   border-radius: 2px;
   padding: 8px;
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
   border: 1px solid #BDBDBD;
 }
 
 label {
   font-size: 12px;
   font-weight: bold;
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
   display: block;
   text-transform: uppercase;
 }
 
+
 /* Button */
+
 .button, button {
   display: inline-flex;
   align-items: center;
@@ -112,6 +117,7 @@ label {
   padding-right: 4px;
 }
 
+
 /* Top Bar */
 
 app-top-bar {
@@ -129,6 +135,7 @@ app-top-bar h1 {
   color: white;
   margin: 0;
 }
+
 
 /* Checkout Cart, Shipping Prices */
 
@@ -200,27 +207,27 @@ app-top-bar h1 {
 
 /* app-custom-input */
 
-.app-custom-input{
+custom-input{
   position: relative;
 }
 
-.app-custom-input > input{
-  background-color: transparent;
+custom-input > input{
+  width: 100%;
 }
 
-.app-custom-input span{
+custom-input > label{
   position: absolute;
   left: 1em;
   top: .9em;
   cursor: text;
   font-weight: 500;
-  transition: transform .5s;
+  transition: transform .5s ease-out;
 }
 
-.app-custom-input input:focus + label span{
+custom-input input:focus + label{
   transform: translate(-.5em, -2.5em);
   font-weight: 800;
-  font-size: .8em;
+  font-size: .6em;
   color: rgba(0, 0, 0, 0.801);
 }
 
@@ -250,13 +257,12 @@ app-top-bar h1 {
   transition: transform 100ms;
 }
 
-.productComponent>img{
+.productComponent > img{
   align-self: center;
-  width: min(200px,90%);
+  width: min(200px, 90%);
   aspect-ratio: 1/1;
   margin: 5% 0;
 }
-
 
 .productComponent:hover{
   box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.425);
@@ -273,41 +279,57 @@ app-top-bar h1 {
 }
 
 
-/* address-register */
+/* general-register-form */
 
-.address-register{
+app-address-register,
+app-client-register,
+app-store-register,
+app-login-form{
   display: grid;
   place-items: center;
   min-height: calc(100vh - 2 * var(--topBarHeight));
 }
 
-.address-register-container{
-  width: min(450px, 80vw);
+.general-form-container{
+  width: min(450px, 85vw);
   margin-inline: auto;
+  margin-top: 15px;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.315);
   padding: 50px 25px;
   display: flex;
   flex-direction: column;
+  gap: 25px;
   align-items: center;
 }
 
-.address-register-container > input{
-  width: min(250px, 70%);
-  margin-bottom: 20px;
-  overflow: auto;
+.general-form-container > custom-input{
+  width: min(250px, 80%);
 }
 
-.address-register-container > input:focus::placeholder{
-  position: relative;
-  top: -2em;
-}
-
-.address-register-buttons{
-  margin-top: 10px;
+.general-form-buttons{
   display: flex;
   justify-content: center;
   gap: 25px;
 }
+
+
+/* wishlist */
+
+app-wishlist{
+  display: flex;
+  flex-direction: column;
+}
+
+.wishlist-item{
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.303);
+}
+
+.wishlist-item > img{
+  display: block;
+  height: 200px;
+  width: 200px;
+}
+
 
 /* router-outlet */
 
