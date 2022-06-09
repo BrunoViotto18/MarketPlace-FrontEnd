@@ -25,6 +25,8 @@ export class ProductsListComponent implements OnInit {
     axios(config)
     .then(function (response:any) {
       instance.products = response.data;
+      console.log(response.data);
+      
     })
     .catch(function (error:any) {
       console.log(error);
