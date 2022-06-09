@@ -1,0 +1,37 @@
+.btn{
+    background-color: transparent;
+    border-color:transparent ;
+}
+.btn-secondary{
+    background-color: transparent;
+    border-color:transparent ;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 30px 2px 2px;
+    border: none;
+}
+
+.btn:active{
+    background-color: transparent;
+    box-shadow: 15px;
+}
+.dropdown{
+    background-color: transparent;
+    box-shadow: none;
+}
+button:active{
+    background-color: #ff000000;;
+}
+.bla{
+    font-weight: bold;
+}
+.bla:hover{
+    background-color: #1976d241;;
+}
+
+a{
+  text-decoration: none;  
+}
