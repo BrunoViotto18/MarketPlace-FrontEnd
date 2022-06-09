@@ -225,59 +225,6 @@
     font-size: 25px;
     color: rgb(65, 65, 65);
   }
-  
-
-
-/* .app-heart-button */
-
-.app-heart-button{
-  border: solid .2em red;
-  border-top: none;
-  border-right: none;
-  font-size: 16px;
-  height: 1em;
-  width: 1em;
-  position: relative;
-  transform: rotate(-45deg);
-}
-
-.app-heart-button div:first-child{
-  background-color: inherit;
-  border: solid .2em red;
-  border-bottom: none;
-  height: .5em;
-  width: 1em;
-  border-radius: .5em .5em 0 0;
-  position: absolute;
-  top: -.45em;
-  left: -.2em;
-}
-
-.app-heart-button div:nth-child(2){
-  height: .2em;
-  width: .2em;
-  background-color: red;
-  position: absolute;
-  right: -.0em;
-  top: .0em;
-}
-
-.app-heart-button div:last-child{
-  background-color: inherit;
-  border: solid .2em red;
-  border-left: none;
-  height: 1em;
-  width: .5em;
-  border-radius: 0 .5em .5em 0;
-  position: absolute;
-  bottom: -.2em;
-  right: -.45em;
-}
-
-.app-heart-button:hover{
-  background: red;
-  cursor: pointer;
-}
 
 
 /* app-custom-input */
@@ -305,9 +252,6 @@ custom-input input:focus + label{
   font-size: .6em;
   color: rgba(0, 0, 0, 0.801);
 }
-
-
-
 
 
 /* general-register-form */
