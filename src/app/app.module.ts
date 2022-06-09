@@ -44,7 +44,7 @@ import { ProfileComponent } from './profile/profile.component';
       {path: 'client-register', component:ClientRegisterComponent},
       {path: 'store-register', component:StoreRegisterComponent},
       {path: 'login', component:LoginFormComponent},
-      {path: 'wishlist/:clientID', component:WishlistComponent}
+      {path: 'wishlist/:clientID', component:WishlistComponent},
       {path: 'profile/:clientID', component:WishlistComponent}
     ])
   ],
