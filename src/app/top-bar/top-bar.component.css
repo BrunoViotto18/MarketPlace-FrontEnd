@@ -1,11 +1,18 @@
+/* .dropdown{
+    background-color: transparent;
+    box-shadow: none;
+}
+
 .btn{
     background-color: transparent;
     border-color:transparent ;
 }
+
 .btn-secondary{
     background-color: transparent;
     border-color:transparent ;
 }
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -18,20 +25,73 @@ select {
     background-color: transparent;
     box-shadow: 15px;
 }
-.dropdown{
-    background-color: transparent;
-    box-shadow: none;
-}
+
 button:active{
     background-color: #ff000000;;
 }
+
 .bla{
     font-weight: bold;
 }
+
 .bla:hover{
     background-color: #1976d241;;
 }
 
 a{
   text-decoration: none;  
+} */
+
+
+/* Top Bar */
+
+.top-bar {
+    width: 100%;
+    height: var(--topBarHeight);
+    background-color: #253f5a;
+    padding: 16px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.top-bar a h1 {
+    color: white;
+    margin: 0;
+}
+
+.top-bar__user-icon{
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    padding: 14px;
+}
+
+.top-bar__navigation{
+    display: none;
+    position: absolute;
+    top: var(--topBarHeight);
+    right: 20px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.289);
+}
+
+.top-bar__navigation.show-navigation{
+    display: block;
+}
+
+.top-bar__nav-links{
+    list-style: none;
+    margin: 5px 0;
+}
+
+.top-bar__nav-links li{
+    font-size: 18px;
+    padding: 10px 40px;
+    cursor: pointer;
+}
+
+.top-bar__nav-links li:hover{
+    background-color: #1976d241;
 }

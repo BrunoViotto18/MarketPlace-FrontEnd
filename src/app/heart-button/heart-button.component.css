@@ -1,4 +1,24 @@
+.heart-button-container{
+    display: grid;
+    place-items: center;
+    align-self: center;
+    padding: .5em;
+}
+
+.heart-button-container:hover{
+    cursor: pointer;
+}
+
+.heart-button-container:hover > div{
+    background-color: red;
+}
+
+.heart-button-container.heart-button-fill > div{
+    background-color: red;
+}
+
 .heart-button{
+    background-color: transparent;
     border: solid .2em red;
     border-top: none;
     border-right: none;
@@ -7,6 +27,7 @@
     width: 1em;
     position: relative;
     transform: rotate(-45deg);
+    pointer-events: none;
 }
   
 .heart-button div:first-child{
@@ -19,6 +40,7 @@
     position: absolute;
     top: -.45em;
     left: -.2em;
+    pointer-events: none;
 }
   
 .heart-button div:nth-child(2){
@@ -28,6 +50,7 @@
     position: absolute;
     right: -.0em;
     top: .0em;
+    pointer-events: none;
 }
   
 .heart-button div:last-child{
@@ -40,10 +63,5 @@
     position: absolute;
     bottom: -.2em;
     right: -.45em;
-  }
-  
-.heart-button:hover{
-    background: red;
-    cursor: pointer;
+    pointer-events: none;
 }
-  

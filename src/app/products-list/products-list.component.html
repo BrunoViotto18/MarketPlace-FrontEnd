@@ -1,25 +1,22 @@
-<div class="productsList ">
+<div class="products-list ">
 
-    <div class="productComponent  owl-carousel" *ngFor="let product of products">
+    <div class="product-component" *ngFor="let product of products">
         <img src={{product.image}} alt=""  [routerLink]="['/product',product.id]">
-        <h2  [routerLink]="['/product',product.id]">
-            <p >
-                {{product.price | currency:'BRL'}}
-            </p>
-        </h2>
+
+        <h2><p>{{product.price | currency:'BRL'}}</p></h2>
+
         <h3  [routerLink]="['/product',product.id]">
-            <a [title]="product.name + 'details'" class="textoverflow" >
-                {{product.name}}
-            </a>
+            <a [title]="product.name + 'details'" class="textoverflow" >{{product.name}}</a>
         </h3>
+
         <!-- <h2 class="textoverflow">
                 {{product.description}}
         </h2> -->
-        <div class="btns" >
-            <button >Comprar Agora</button>
-            <heart-button></heart-button>
+
+        <div class="product-component__buttons" >
+            <button [routerLink]="['/product',product.id]">Comprar Agora</button>
+            <heart-button [productId]="product.id"></heart-button>
         </div>
-        
     </div>
 </div>
 

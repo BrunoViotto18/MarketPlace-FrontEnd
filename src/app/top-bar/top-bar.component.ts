@@ -23,6 +23,18 @@ export class TopBarComponent implements OnInit {
     }
 
   }
+
+  showNavigationLinks(){
+    let nav = document.querySelector('.top-bar__navigation') as HTMLElement
+    nav.classList.toggle('show-navigation')
+  }
+
+  hideNavigationLinks(){
+    let nav = document.querySelector('.top-bar__navigation') as HTMLElement
+    if (nav.classList.contains('show-navigation'))
+      nav.classList.toggle('show-navigation')
+  }
+
   LogOut(){
     localStorage.setItem("authToken", "")
     this.reloadCurrentPage()

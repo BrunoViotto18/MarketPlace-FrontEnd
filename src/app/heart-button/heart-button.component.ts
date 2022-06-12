@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'heart-button',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeartButtonComponent implements OnInit {
 
+  @Input()
+  productId: number | undefined
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  fillHeart(event: Event){
+    let target = event.target as HTMLElement
+    target.classList.toggle('heart-button-fill')
   }
 
 }

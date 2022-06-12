@@ -1,230 +1,164 @@
-  html{
-    background-color: #f8f8f8;
-  }
-  :root{
-    --topBarHeight: 68px;
-  }
-
-
-  body{
-    min-height: 100vh;
-  }
-* {
-    font-family: 'Montserrat', Arial, sans-serif;
-    color: #616161;
-    box-sizing: border-box;
-    font-weight: 600;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
- 
-  .container {
-    display: flex;
-    flex-direction:column;
-  }
-  
-  router-outlet + *  {
-    padding: 0 16px;
-  }
-  
-  /* Text */
-  
-  h1 {
-    font-size: 25px;
-  }
-  
-  h2 {
-    font-size: 15px;
-    margin: 3% 0;
-    
-  }
-
-  
-  p {
-    font-weight:bold;
-    font-family:Muli;
-    font-size: 26px;
-    color: rgb(75, 75, 75);
-  }
-  
-  /* Hyperlink */
-  
-  a {
-    cursor: pointer;
-    color: #868686;
-    text-decoration: none;
-  }
-  
-  
-  /* Input */
-  
-  input {
-    font-size: 14px;
-    border-radius: 2px;
-    padding: 8px;
-    /* margin-bottom: 16px; */
-    border: 1px solid #BDBDBD;
-  }
-  
-  label {
-    font-size: 12px;
-    font-weight: bold;
-    /* margin-bottom: 4px; */
-    display: block;
-    text-transform: uppercase;
-  }
-  
-
-  .button, button {
-    align-items: center;
-    padding: 8px 25px;
-    border-radius: 2px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    background-color: #1976d2;
-    color: rgb(255, 255, 255);
-    border: none;
-  }
-  
-  .button:hover, button:hover {
-    opacity: 0.9;
-  }
-  
-  .button:disabled, button:disabled {
-    opacity: 0.9;
-    cursor: auto;
-  }
-  
-  button:focus{
-    border: none;
-    outline: none;
+:root{
+  --topBarHeight: 68px;
 }
 
-  /* Fancy Button */
-  
-  .fancy-button {
-    background-color: white;
-    color: #1976d2;
-  }
-  
-  .fancy-button i.material-icons {
-    color: #1976d2;
-    padding-right: 4px;
-  }
-  
-  /* Top Bar */
-  
-  app-top-bar {
-    width: 100%;
-    height: var(--topBarHeight);
-    background-color: #253f5a;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content:space-between;
-    align-items: center;
-  }
-  
-  app-top-bar h1 {
-    color: white;
-    margin: 0;
-  }
-  
-  /* Checkout Cart, Shipping Prices */
-  
-  .cart-item, .shipping-item {
-    width: 100%;
-    min-width: 400px;
-    max-width: 450px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px 32px;
-    margin-bottom: 8px;
-    border-radius: 2px;
-    background-color: #EEEEEE;
-    
-  }
+html{
+  background-color: #f8f8f8;
+}
+
+
+* {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #616161;
+  box-sizing: border-box;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+}
+
+app-root{
+  display: block;
+  min-height: 100vh;
+}
  
-  .productsList{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
-    grid-template-rows: repeat(auto-fit, 1fr);
-    justify-content: center;
-    width: 85vw;
-    margin-inline: auto;
-    gap: 30px;
-  }
+.container {
+  display: flex;
+  flex-direction:column;
+}
 
-  .productComponent{
-    padding: 20px;
-    background: white;
-    display: flex;
-    align-items: center;
-    position: relative;
-    gap: 20px;
-    flex-direction:column;
-    flex-basis: 300px;
-    flex-grow: 1;
-    border-radius: 2px;
-    box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.582);
-    transition: transform 100ms;
-  }
+router-outlet + *  {
+  padding: 0 16px;
+}
 
-  .productComponent>img{
-    align-self: center;
-    width: min(200px,90%);
-    margin: 5% 0;
-  }
+/* Text */
 
- 
-  .productComponent:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.425);
-  }
+h1 {
+  font-size: 25px;
+}
 
-  .textoverflow{
-    font-size: 17px;
-    text-align: center;
-    text-overflow:ellipsis;
-    
-    overflow:hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    white-space: normal;
-  }
+h2 {
+  font-size: 15px;
+  margin: 3% 0;
+  
+}
 
-  .fontformatting{
-    margin-top: 2%;
-    display: flex;
-    flex-direction: column;
-    gap: 3.5vh;
-  }
-  .fontformatting>h1{
-    font-weight: bold;
-    font-family: Muli;
-    font-size: 26px;
-    color: rgb(65, 65, 65);
-  }
+p {
+  font-weight:bold;
+  font-family:Muli;
+  font-size: 26px;
+  color: rgb(75, 75, 75);
+}
+  
+/* Hyperlink */
 
-  .fontformatting>h2{
-    font-weight: bold;
-    font-family: Muli;
-    font-size: 35px;
-    color: rgb(41, 41, 41);
-  }
+a {
+  cursor: pointer;
+  color: #868686;
+  text-decoration: none;
+}
 
-  .fontformatting>p{
-    font-weight: bold;
-    font-family: Muli;
-    font-size: 25px;
-    color: rgb(65, 65, 65);
-  }
+
+/* Input */
+
+input {
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 8px;
+  /* margin-bottom: 16px; */
+  border: 1px solid #BDBDBD;
+}
+  
+label {
+  font-size: 12px;
+  font-weight: bold;
+  /* margin-bottom: 4px; */
+  display: block;
+  text-transform: uppercase;
+}
+
+
+.button, button {
+  align-items: center;
+  padding: 8px 25px;
+  border-radius: 2px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1976d2;
+  color: rgb(255, 255, 255);
+  border: none;
+}
+  
+.button:hover, button:hover {
+  opacity: 0.9;
+}
+
+.button:disabled, button:disabled {
+  opacity: 0.9;
+  cursor: auto;
+}
+
+button:focus{
+  border: none;
+  outline: none;
+}
+
+/* Fancy Button */
+
+.fancy-button {
+  background-color: white;
+  color: #1976d2;
+}
+
+.fancy-button i.material-icons {
+  color: #1976d2;
+  padding-right: 4px;
+}
+
+
+/* Checkout Cart, Shipping Prices */
+  
+.cart-item, .shipping-item {
+  width: 100%;
+  min-width: 400px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  background-color: #EEEEEE;
+}
+
+
+/* Classes Utilitárias */
+
+.textoverflow{
+  font-size: 17px;
+  text-align: center;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+
+
+/* heart-button */
+
+heart-button{
+  display: grid;
+  place-items: center;
+}
 
 
 /* general-register-form */
@@ -258,30 +192,4 @@ app-login-form{
   display: flex;
   justify-content: center;
   gap: 25px;
-}
-
-
-/* wishlist */
-
-app-wishlist{
-  display: flex;
-  flex-direction: column;
-}
-
-.wishlist-item{
-  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.303);
-}
-
-.wishlist-item > img{
-  display: block;
-  height: 200px;
-  width: 200px;
-}
-
-
-/* router-outlet */
-
-app-root{
-  display: block;
-  min-height: 100vh;
 }
