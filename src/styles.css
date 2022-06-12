@@ -84,7 +84,9 @@ label {
 }
 
 
-.button, button {
+/* Botões */
+
+button {
   align-items: center;
   padding: 8px 25px;
   border-radius: 2px;
@@ -95,21 +97,6 @@ label {
   color: rgb(255, 255, 255);
   border: none;
 }
-  
-.button:hover, button:hover {
-  opacity: 0.9;
-}
-
-.button:disabled, button:disabled {
-  opacity: 0.9;
-  cursor: auto;
-}
-
-button:focus{
-  border: none;
-  outline: none;
-}
-
 
 /* Classes Utilitárias */
 
