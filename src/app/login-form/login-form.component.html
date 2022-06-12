@@ -1,9 +1,5 @@
 <div class="general-form-container">
+    <custom-input [label]="input.label" [type]="input.type" [required]="input.required" *ngFor="let input of inputs"></custom-input>
 
-    <custom-input [placeholder]="placeholder" *ngFor="let placeholder of placeholders"></custom-input>
-
-    <div class="general-form-buttons">
-        <button (click) = "verify()">Login</button>
-    </div>
-
+    <button (click) = "verify()">Login</button>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../products';
+import { products } from '../Product';
 import axios from "axios";
 
 @Component({
@@ -26,7 +26,6 @@ export class ProductsListComponent implements OnInit {
     .then(function (response:any) {
       instance.products = response.data;
       console.log(response.data);
-      
     })
     .catch(function (error:any) {
       console.log(error);

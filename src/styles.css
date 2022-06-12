@@ -227,33 +227,6 @@
   }
 
 
-/* app-custom-input */
-
-custom-input{
-  position: relative;
-}
-
-custom-input > input{
-  width: 100%;
-}
-
-custom-input > label{
-  position: absolute;
-  left: 1em;
-  top: .9em;
-  cursor: text;
-  font-weight: 600;
-  transition: transform .5s ease-out;
-}
-
-custom-input input:focus + label{
-  transform: translate(-.5em, -2.5em);
-  font-weight: 800;
-  font-size: .6em;
-  color: rgba(0, 0, 0, 0.801);
-}
-
-
 /* general-register-form */
 
 app-address-register,

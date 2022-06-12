@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import  axios  from 'axios';
+import { CustomInput } from '../CustomInput';
 
 @Component({
   selector: 'app-login-form',
@@ -8,23 +10,30 @@ import  axios  from 'axios';
 })
 export class LoginFormComponent implements OnInit {
 
-  placeholders = [
-    'Usuário',
-    'Senha'
+  inputs: Array<CustomInput> = [
+    {label:'Usuário', type:'text', required:true},
+    {label:'Senha', type:'password', required:true}
   ]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
 
   }
 
   verify(){
-    let login = document.querySelector(`#${this.placeholders[0]}`) as HTMLInputElement
-    let Senha = document.querySelector(`#${this.placeholders[1]}`) as HTMLInputElement
+    let login = document.querySelector(`#${this.inputs[0].label}`) as HTMLInputElement
+    let senha = document.querySelector(`#${this.inputs[1].label}`) as HTMLInputElement
+
+    if (!login.reportValidity())
+      return
+    
+    if (!senha.reportValidity())
+      return
+
     var data = JSON.stringify({
       "login": login.value,
-      "passwd": Senha.value
+      "passwd": senha.value
     });
     
     var config = {
@@ -36,17 +45,20 @@ export class LoginFormComponent implements OnInit {
       data : data
     };
     
+    let instance = this
     axios(config)
     .then(function (response) {
-      console.log(response.data);
-      
-      localStorage.setItem("authToken", response.data)
+      localStorage.setItem("authToken", response.data['token'])
+      localStorage.setItem('userId', response.data['id'])
+      instance.router.navigate(['/'])
     })
     .catch(function (error) {
-      console.log(error);
+      if (error.response.data == 'Invalid credentials')
+        alert('Usuário ou senha inválidos! Tente novamente.')
+      login.value = ''
+      senha.value = ''
     });
 
-    
   }
 
 }

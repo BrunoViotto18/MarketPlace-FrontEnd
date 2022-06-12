@@ -1,2 +1,9 @@
-<input type="text" id={{placeholder}}>
-<label for={{placeholder}}>{{placeholder}}</label>
+<div class="custom-input">
+    <ng-container *ngIf="required">
+        <input type="{{type}}" id={{label}} (focus)="inputFocus($event)" (blur)="inputBlur($event)" required>
+    </ng-container>
+    <ng-container *ngIf="!required">
+        <input type="{{type}}" id={{label}} (focus)="inputFocus($event)" (blur)="inputBlur($event)">
+    </ng-container>
+    <label for={{label}}>{{label}}</label>
+</div>
