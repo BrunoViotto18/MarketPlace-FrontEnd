@@ -5,7 +5,10 @@ import { empty } from 'rxjs';
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
-  styleUrls: ['./top-bar.component.css']
+  styleUrls: ['./top-bar.component.css'],
+  host: {
+    '(document: click)': 'onClick($event)'
+  }
 })
 export class TopBarComponent implements OnInit {
   @Input()
@@ -33,6 +36,18 @@ export class TopBarComponent implements OnInit {
     let nav = document.querySelector('.top-bar__navigation') as HTMLElement
     if (nav.classList.contains('show-navigation'))
       nav.classList.toggle('show-navigation')
+  }
+
+  onClick(event: Event){
+    let target = event.target as HTMLElement
+    let nav = document.querySelector('.top-bar__navigation') as HTMLElement
+    let userIcon = document.querySelector('.top-bar__user-icon') as HTMLElement
+
+    if (target == userIcon && !nav.classList.contains('show-navigation'))
+      this.showNavigationLinks()
+    else if (target != nav && target != userIcon && nav.classList.contains('show-navigation'))
+      this.hideNavigationLinks()
+    //document.body.style.backgroundColor = '#ff0000'
   }
 
   LogOut(){
