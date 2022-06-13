@@ -117,6 +117,9 @@ button {
 heart-button{
   display: grid;
   place-items: center;
+  position: absolute;
+  top: 2em;
+  right: 2em;
 }
 
 

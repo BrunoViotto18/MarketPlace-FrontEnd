@@ -13,10 +13,9 @@
                 {{product.description}}
         </h2> -->
 
-        <div class="product-component__buttons" >
-            <button [routerLink]="['/product',product.id]">Comprar Agora</button>
-            <heart-button [productId]="product.id"></heart-button>
-        </div>
+        <button [routerLink]="['/product',product.id]">Comprar Agora</button>
+        
+        <heart-button [productId]="product.id"></heart-button>
     </div>
 </div>
 
