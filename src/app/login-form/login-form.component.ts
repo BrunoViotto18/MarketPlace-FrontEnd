@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import  axios  from 'axios';
+import { delay } from 'rxjs';
 import { CustomInput } from '../CustomInput';
 
 @Component({
@@ -50,7 +51,11 @@ export class LoginFormComponent implements OnInit {
     .then(function (response) {
       localStorage.setItem("authToken", response.data['token'])
       localStorage.setItem('userId', response.data['id'])
-      instance.router.navigate(['/'])
+      instance.router.navigate(['/']).then(() =>{
+        window.location.reload();
+      });
+
+      
     })
     .catch(function (error) {
       if (error.response.data == 'Invalid credentials')

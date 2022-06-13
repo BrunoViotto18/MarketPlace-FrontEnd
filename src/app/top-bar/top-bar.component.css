@@ -75,6 +75,7 @@ a{
     right: 20px;
     background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.289);
+    z-index: 10;
 }
 
 .top-bar__navigation.show-navigation{
