@@ -90,12 +90,16 @@ button {
   align-items: center;
   padding: 8px 25px;
   border-radius: 2px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   cursor: pointer;
   background-color: #1976d2;
   color: rgb(255, 255, 255);
   border: none;
+  letter-spacing: 1.7px;
+}
+button:focus{
+  outline: none;
 }
 
 /* Classes Utilitárias */

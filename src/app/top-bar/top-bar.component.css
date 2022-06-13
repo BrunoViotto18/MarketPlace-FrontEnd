@@ -55,11 +55,15 @@ a{
     justify-content:space-between;
     align-items: center;
 }
-
+.top-bar a{
+    text-decoration: none;
+}
 .top-bar a h1 {
     color: white;
     margin: 0;
+    
 }
+
 
 .top-bar__user-icon{
     display: grid;
