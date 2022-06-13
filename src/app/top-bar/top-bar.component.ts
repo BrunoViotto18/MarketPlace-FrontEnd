@@ -38,17 +38,17 @@ export class TopBarComponent implements OnInit {
       nav.classList.toggle('show-navigation')
   }
 
-  onClick(event: Event){
-    let target = event.target as HTMLElement
-    let nav = document.querySelector('.top-bar__navigation') as HTMLElement
-    let userIcon = document.querySelector('.top-bar__user-icon') as HTMLElement
+  // onClick(event: Event){
+  //   let target = event.target as HTMLElement
+  //   let nav = document.querySelector('.top-bar__navigation') as HTMLElement
+  //   let userIcon = document.querySelector('.top-bar__user-icon') as HTMLElement
 
-    if (target == userIcon && !nav.classList.contains('show-navigation'))
-      this.showNavigationLinks()
-    else if (target != nav && target != userIcon && nav.classList.contains('show-navigation'))
-      this.hideNavigationLinks()
-    //document.body.style.backgroundColor = '#ff0000'
-  }
+  //   if (target == userIcon && !nav.classList.contains('show-navigation'))
+  //     this.showNavigationLinks()
+  //   else if (target != nav && target != userIcon && nav.classList.contains('show-navigation'))
+  //     this.hideNavigationLinks()
+  //   //document.body.style.backgroundColor = '#ff0000'
+  // }
 
   LogOut(){
     localStorage.setItem("authToken", "")
