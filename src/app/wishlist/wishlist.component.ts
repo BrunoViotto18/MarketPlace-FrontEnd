@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../Product';
 
 @Component({
   selector: 'app-wishlist',
@@ -7,11 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WishlistComponent implements OnInit {
 
-  products = [
-    'a',
-    'b',
-    'c'
-  ]
+  products: Array<Product> = []
 
   constructor() { }
 

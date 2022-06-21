@@ -16,6 +16,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { StoreRegisterComponent } from './store-register/store-register.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CarrosselComponent } from './carrossel/carrossel.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginFormComponent,
     StoreRegisterComponent,
     WishlistComponent,
-    ProfileComponent
+    ProfileComponent,
+    CarrosselComponent
   ],
   imports: [
     BrowserModule,

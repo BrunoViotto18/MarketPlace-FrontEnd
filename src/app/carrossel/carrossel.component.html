@@ -1,0 +1,11 @@
+<div class="carrossel-before carrossel-button hide-button" (click)="moveCarrosselLeft($event)">
+    <div class="carrossel-arrow left"></div>
+</div>
+<div class="carrossel-container">
+    <div class="carrossel">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="carrossel-after carrossel-button hide-button" (click)="moveCarrosselRight($event)">
+    <div class="carrossel-arrow right"></div>
+</div>
