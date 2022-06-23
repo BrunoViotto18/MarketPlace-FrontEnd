@@ -1,5 +1,5 @@
 .carrossel-container{
-    outline: 3px solid rgba(0, 0, 0, 0.3);
+    /* outline: 3px solid rgba(0, 0, 0, 0.3); */
     overflow-x: hidden;
     position: relative;
 }
@@ -9,6 +9,7 @@
     gap: 1em;
     min-width: max-content;
     transition: transform 1s ease-out;
+    padding: 2vw;
 }
 
 
@@ -69,3 +70,4 @@
 .carrossel-button.hide-button > .carrossel-arrow{
     border-top-color: transparent;
 }
+
