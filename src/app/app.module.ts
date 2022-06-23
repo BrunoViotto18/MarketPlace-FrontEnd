@@ -17,6 +17,7 @@ import { StoreRegisterComponent } from './store-register/store-register.componen
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CarrosselComponent } from './carrossel/carrossel.component';
+import { ProductComponentComponent } from './product-component/product-component.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CarrosselComponent } from './carrossel/carrossel.component';
     StoreRegisterComponent,
     WishlistComponent,
     ProfileComponent,
-    CarrosselComponent
+    CarrosselComponent,
+    ProductComponentComponent
   ],
   imports: [
     BrowserModule,

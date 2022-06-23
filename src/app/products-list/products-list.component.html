@@ -1,7 +1,6 @@
-<div class="products-list ">
-
-    <div class="product-component" *ngFor="let product of products">
-        <img src={{product.image}} alt=""  [routerLink]="['/product',product.id]">
+<div class="products-list">
+    <ng-container *ngFor="let product of products">
+        <!-- <img src={{product.image}} alt=""  [routerLink]="['/product',product.id]">
 
         <h2><p>{{product.price | currency:'BRL'}}</p></h2>
 
@@ -9,14 +8,15 @@
             <a [title]="product.name + 'details'" class="textoverflow" >{{product.name}}</a>
         </h3>
 
-        <!-- <h2 class="textoverflow">
-                {{product.description}}
-        </h2> -->
-
         <button [routerLink]="['/product',product.id]">Comprar Agora</button>
         
-        <heart-button [productId]="product.id"></heart-button>
-    </div>
+        <heart-button [productId]="product.id"></heart-button> -->
+
+        <product-component [product]="product"></product-component>
+    </ng-container>
 </div>
 
 
+<!-- <h2 class="textoverflow">
+    {{product.description}}
+</h2> -->
