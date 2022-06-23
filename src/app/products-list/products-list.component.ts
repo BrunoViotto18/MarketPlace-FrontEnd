@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../Product';
+import { Product } from '../Product';
 import axios from "axios";
 
 @Component({
@@ -10,7 +10,7 @@ import axios from "axios";
 
 export class ProductsListComponent implements OnInit {
 
-  products = products;
+  products: Array<Product> = [];
   constructor() { }
 
   ngOnInit(): void {
