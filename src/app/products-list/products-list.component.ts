@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../Product';
 import axios from "axios";
+import {Usuario} from '../Usuario'
 
 @Component({
   selector: 'app-products-list',

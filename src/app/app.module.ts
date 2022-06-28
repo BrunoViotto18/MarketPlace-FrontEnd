@@ -17,6 +17,7 @@ import { StoreRegisterComponent } from './store-register/store-register.componen
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CarrosselComponent } from './carrossel/carrossel.component';
+import { PurchasesComponent } from './purchases/purchases.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CarrosselComponent } from './carrossel/carrossel.component';
     StoreRegisterComponent,
     WishlistComponent,
     ProfileComponent,
-    CarrosselComponent
+    CarrosselComponent,
+    PurchasesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { CarrosselComponent } from './carrossel/carrossel.component';
       {path: 'store-register', component:StoreRegisterComponent},
       {path: 'login', component:LoginFormComponent},
       {path: 'wishlist', component:WishlistComponent},
-      {path: 'profile/:clientID', component:WishlistComponent}
+      {path: 'profile/:clientID', component:WishlistComponent},
+      {path: 'purchases/:clientID', component:PurchasesComponent}
     ])
   ],
   providers: [],
