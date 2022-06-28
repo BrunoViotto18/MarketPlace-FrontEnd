@@ -1,11 +1,10 @@
 <div class="wishlist">
     <div *ngFor='let product of products' class='wishlist-item'>
-        <img src="../../assets/img/defaultProduct.jpg" alt="Produto">
-
+        <img src={{product.image}} alt="Produto">
         <div class='wishlist-item-details'>
-            <h4>{{product}}</h4>
-            <h3>R$43.55</h3>
-            <p class="textoverflow">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto eaque minus minima ipsa sit dignissimos laboriosam, itaque, quasi atque veritatis nostrum voluptates laudantium iure cupiditate nemo modi beatae molestiae, accusantium aliquam ipsam quisquam. Omnis vitae error beatae natus quis iure excepturi, distinctio ratione culpa deleniti cum pariatur. Illum, sed quam.</p>
+            <h4>{{product.name}}</h4>
+            <h3>{{product.price | currency}}</h3>
+            <p class="textoverflow">{{product.description}}</p>
         </div>
     </div>
 </div>
