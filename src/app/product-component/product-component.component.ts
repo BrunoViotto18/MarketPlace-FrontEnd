@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from '../Product';
+import { Product, Stock } from '../Stock';
 
 @Component({
   selector: 'product-component',
@@ -9,11 +9,14 @@ import { Product } from '../Product';
 export class ProductComponentComponent implements OnInit {
 
   @Input()
+  stock: Stock | undefined
+
   product: Product | undefined
 
   constructor() { }
 
   ngOnInit(): void {
+    this.product = this.stock?.product
   }
 
 }

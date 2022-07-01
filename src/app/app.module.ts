@@ -43,13 +43,13 @@ import { ProductComponentComponent } from './product-component/product-component
     AppRoutingModule,
     RouterModule.forRoot([
       {path: '',component:ProductsListComponent},
-      {path: 'product/:productID', component:ProductDetailComponent},
+      {path: 'product/:stockID', component:ProductDetailComponent},
       {path: 'address-register', component:AddressRegisterComponent},
       {path: 'client-register', component:ClientRegisterComponent},
       {path: 'store-register', component:StoreRegisterComponent},
       {path: 'login', component:LoginFormComponent},
       {path: 'wishlist', component:WishlistComponent},
-      {path: 'profile/:clientID', component:WishlistComponent}
+      {path: 'profile', component:WishlistComponent}
     ])
   ],
   providers: [],

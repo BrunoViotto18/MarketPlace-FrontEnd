@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../Product';
+import { Product } from '../Stock';
 import axios from 'axios';
 
 
@@ -18,7 +18,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const porductIdFromroute = Number(routeParams.get('productID'));
+    const porductIdFromroute = Number(routeParams.get('stockID'));
     
     var config = {
       method: 'get',
