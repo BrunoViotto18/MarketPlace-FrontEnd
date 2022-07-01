@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, Stock } from '../Stock';
+import { Stock } from '../Stock';
 import axios from "axios";
 
 @Component({

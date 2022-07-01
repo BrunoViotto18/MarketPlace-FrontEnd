@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+clsimport { Component, OnInit } from '@angular/core';
 import { Product } from '../Stock';
 
 @Component({
@@ -13,6 +13,7 @@ export class WishlistComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
