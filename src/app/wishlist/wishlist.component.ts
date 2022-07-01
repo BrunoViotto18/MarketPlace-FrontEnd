@@ -1,4 +1,4 @@
-clsimport { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Product } from '../Stock';
 
 @Component({
