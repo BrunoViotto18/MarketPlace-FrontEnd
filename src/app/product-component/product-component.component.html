@@ -1,17 +1,17 @@
-<div class="product-component" *ngIf="product">
-    <img src={{product.image}} alt=""  [routerLink]="['/product',product.id]">
+<div class="product-component" *ngIf="stock">
+    <img src={{stock.product?.image}} alt=""  [routerLink]="['/product', stock.product?.id]">
     
-    <h2><p>{{product.price | currency:'BRL'}}</p></h2>
+    <h2><p>{{stock.product?.price | currency:'BRL'}}</p></h2>
     
-    <h3  [routerLink]="['/product',product.id]">
-        <a [title]="product.name + 'details'" class="textoverflow" >{{product.name}}</a>
+    <h3  [routerLink]="['/product', stock.product?.id]">
+        <a [title]="stock.product?.name + 'details'" class="textoverflow" >{{stock.product?.name}}</a>
     </h3>
     
     <!-- <h2 class="textoverflow">
             {{product.description}}
     </h2> -->
     
-    <button [routerLink]="['/product',product.id]">Comprar Agora</button>
+    <button [routerLink]="['/product', stock.id]">Comprar Agora</button>
     
-    <heart-button [productId]="product.id"></heart-button>
+    <heart-button [stockId]="stock.id"></heart-button>
 </div>
