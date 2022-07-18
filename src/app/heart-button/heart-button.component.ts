@@ -45,12 +45,20 @@ export class HeartButtonComponent implements OnInit {
       };
     }
     else{
-      
+      var config = {
+        method: 'post',
+        url: `http://localhost:5164/WishList/removeProduct/${this.stockId}`,
+        headers: { 
+          'Authorization': `Bearer ${localStorage.getItem('authToken')}`
+        }
+      };
     }
     
+    let instance = this;
     axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
+      instance.isWishlisted = !instance.isWishlisted;
     })
     .catch(function (error) {
       console.log(error);
