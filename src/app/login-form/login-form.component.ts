@@ -49,7 +49,7 @@ export class LoginFormComponent implements OnInit {
     let instance = this
     axios(config)
     .then(function (response) {
-      localStorage.setItem("authToken", response.data['token'])
+      localStorage.setItem("authToken", response.data)
       instance.router.navigate(['/']).then(() =>{
         window.location.reload();
       });

@@ -1,6 +1,4 @@
-import { Token } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
-import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',

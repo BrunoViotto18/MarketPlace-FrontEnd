@@ -22,7 +22,7 @@
                         <a [title]="produto.name + 'details'" class="textoverflow" >{{produto.name}}</a>
                     </h3>
                     <button [routerLink]="['/product',produto.id]">Comprar Agora</button>
-                    <heart-button [productId]="produto.id"></heart-button>
+                    <heart-button [stockId]="produto.id"></heart-button>
                 </div>
             </ng-container>
     </carrossel>

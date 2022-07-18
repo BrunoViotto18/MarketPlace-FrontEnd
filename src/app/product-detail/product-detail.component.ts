@@ -18,7 +18,7 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const porductIdFromroute = Number(routeParams.get('stockID'));
+    const productIdFromroute = Number(routeParams.get('stockID'));
     
     var config = {
       method: 'get',
@@ -30,7 +30,7 @@ export class ProductDetailComponent implements OnInit {
     axios(config)
     .then(function (response:any) {
       var products = response.data as Array<Product>;
-      instance.product = products.find(p => p.id === porductIdFromroute)
+      instance.product = products.find(p => p.id === productIdFromroute)
     })
     .catch(function (error:any) {
       console.log(error);

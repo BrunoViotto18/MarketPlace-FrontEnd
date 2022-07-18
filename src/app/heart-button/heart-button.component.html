@@ -1,4 +1,4 @@
-<div class="heart-button-container" (click)="fillHeart($event)">
+<div class="heart-button-container" [ngClass]="{'heart-button-fill': isWishlisted}" (click)="fillHeart($event)">
     <div class="heart-button">
         <div></div>
         <div></div>
