@@ -15,6 +15,8 @@ export class WishlistComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("authToken")
+    console.log(token)
     var config = {
       method: 'get',
       url: 'http://localhost:5164/WishList/getClientWishlist',

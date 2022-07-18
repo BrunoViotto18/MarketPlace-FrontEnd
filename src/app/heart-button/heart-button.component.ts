@@ -64,8 +64,8 @@ export class HeartButtonComponent implements OnInit {
       console.log(error);
     });
 
-    let target = event.target as HTMLElement
-    target.classList.toggle('heart-button-fill')
+    // let target = event.target as HTMLElement
+    // target.classList.toggle('heart-button-fill')
 
   }
 

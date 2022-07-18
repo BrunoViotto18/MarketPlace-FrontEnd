@@ -1,7 +1,7 @@
 <div class="product-component" *ngIf="stock">
     <img src={{stock.product?.image}} alt=""  [routerLink]="['/product', stock.product?.id]">
     
-    <h2><p>{{stock.product?.price | currency:'BRL'}}</p></h2>
+    <h2><p>{{stock.unit_price | currency:'BRL'}}</p></h2>
     
     <h3  [routerLink]="['/product', stock.product?.id]">
         <a [title]="stock.product?.name + 'details'" class="textoverflow" >{{stock.product?.name}}</a>

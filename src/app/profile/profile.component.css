@@ -1,0 +1,63 @@
+.general{
+    margin-inline:auto;
+    width: 70%;
+}
+.topline{
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    margin: flex-start;
+}
+.topline>img{
+    height: 40px;
+    margin: 10px;
+}
+h1{
+    align-self: center;
+    font-weight: bold;
+    height: 20px;
+    
+}
+h2{
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container-1{
+    height: auto;
+    gap: 40px;
+    padding: 30px;
+    background: white;
+    display: flex;
+    align-items: left;
+    flex-direction:column;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.582);
+    width: auto;
+}
+.container>img{
+    max-height: 80%;
+ 
+}
+
+.info-pess{
+    align-items: left;
+    text-align: left;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+    grid-template-rows: repeat(auto-fit, 1fr);
+    justify-content: center;
+    width: 100%;
+    margin-inline: auto;
+    gap: 30px;
+}
+
+button{
+    font-size: 15px;
+    width: 51%;
+}
+
+.btt>label{
+    color: white;
+}
