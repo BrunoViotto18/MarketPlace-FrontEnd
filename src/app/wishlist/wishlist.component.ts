@@ -13,7 +13,8 @@ export class WishlistComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+    let token = localStorage.getItem("authToken")
+    console.log(token)
   }
 
 }

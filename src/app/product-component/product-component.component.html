@@ -1,7 +1,7 @@
 <div class="product-component" *ngIf="product">
     <img src={{product.image}} alt=""  [routerLink]="['/product',product.id]">
     
-    <h2><p>{{product.price | currency:'BRL'}}</p></h2>
+    <h2><p>{{product.unit_price | currency:'BRL'}}</p></h2>
     
     <h3  [routerLink]="['/product',product.id]">
         <a [title]="product.name + 'details'" class="textoverflow" >{{product.name}}</a>
@@ -15,3 +15,7 @@
     
     <heart-button [productId]="product.id"></heart-button>
 </div>
+
+
+,,
+,,,33333333,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,

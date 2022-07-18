@@ -21,10 +21,12 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
     let token = localStorage.getItem("authToken")
+    console.log(token)
+    
     if (token != undefined && token != "" ){
+      console.log("Nathan")
       this.logged = true
     }
-
   }
 
   showNavigationLinks(){
