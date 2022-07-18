@@ -4,9 +4,9 @@ import { Component, Input, OnInit } from '@angular/core';
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css'],
-  host: {
-    '(document: click)': 'onClick($event)'
-  }
+  // host: {
+  //   '(document: click)': 'onClick($event)'
+  // }
 })
 export class TopBarComponent implements OnInit {
   @Input()

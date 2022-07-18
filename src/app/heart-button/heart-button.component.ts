@@ -35,8 +35,9 @@ export class HeartButtonComponent implements OnInit {
   }
 
   fillHeart(event: Event){
+    var config = {}
     if (!this.isWishlisted){
-      var config = {
+      config = {
         method: 'post',
         url: `http://localhost:5164/WishList/addProduct/${this.stockId}`,
         headers: { 
@@ -45,8 +46,8 @@ export class HeartButtonComponent implements OnInit {
       };
     }
     else{
-      var config = {
-        method: 'post',
+      config = {
+        method: 'delete',
         url: `http://localhost:5164/WishList/removeProduct/${this.stockId}`,
         headers: { 
           'Authorization': `Bearer ${localStorage.getItem('authToken')}`
@@ -57,16 +58,11 @@ export class HeartButtonComponent implements OnInit {
     let instance = this;
     axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
       instance.isWishlisted = !instance.isWishlisted;
     })
     .catch(function (error) {
       console.log(error);
     });
-
-    // let target = event.target as HTMLElement
-    // target.classList.toggle('heart-button-fill')
-
   }
 
 }

@@ -1,23 +1,7 @@
 <div class="products-list ">
-
-    <div class="product-component" *ngFor="let stock of stocks">
-        
-        <img src={{stock.product?.image}} alt=""  [routerLink]="['/product',stock.product?.id]">
-        
-        <h2><p>{{stock.unit_price | currency:'BRL'}}</p></h2>
-        
-        <h3  [routerLink]="['/product',stock.product?.id]">
-            <a [title]="stock.product?.id + 'details'" class="textoverflow" >{{stock.product?.name}}</a>
-        </h3>
-
-        <!-- <h2 class="textoverflow">
-                {{product.description}}
-        </h2> -->
-
-        <button [routerLink]="['/product',stock.id,stock.product?.id]">Comprar Agora</button>
-        
-        <!-- <heart-button [productId]="stock.product?.id"></heart-button> -->
-    </div>
+    <product-component [stock]="stock" *ngFor="let stock of stocks">
+       
+    </product-component>
 </div>
 
 
