@@ -61,3 +61,18 @@ button{
 .btt>label{
     color: white;
 }
+.btt{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: auto;
+}
+.btt>button{
+   height: 40px;
+   width: 60%;
+}
+
+input{
+    width: 60%;
+}

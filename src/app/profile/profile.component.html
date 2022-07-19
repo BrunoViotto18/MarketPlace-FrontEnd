@@ -1,65 +1,65 @@
 
 <div class="general">
     <div class="topline">
-        <h1 id="top">Olá, </h1>
+        <h1 id="top">Olá, {{usuario.name}}</h1>
     </div>
     <div class="container-1">
         <h2>Seus dados:</h2>
         <div class="info-pess">
             <div>
                 <label>Nome:</label>
-                <input type="text" name="" id="nome">
+                <input type="text" name="personal" id="1" value="{{usuario.name}}">
             </div>
             <div>
                 <label>email:</label>
-                <input type="text" name="" id="email">
+                <input type="text" name="personal" id="2" value="{{usuario.email}}">
             </div>
             <div>
                 <label>Data de nascimento:</label>
-                <input type="date" name="" id="data">
+                <input type="date" name="personal" id="3" [valueAsDate]="usuario.dateOfBirth" >
             </div>
             <div>
                 <label>Telefone:</label>
-                <input type="text" name="" id="tel">
+                <input type="text" name="personal" id="4"  value="{{usuario.phone}}">
             </div>
             <div>
                 <label>Documento:</label>
-                <input type="text" name="" id="doc">
+                <input type="text" name="personal" id="5"  value="{{usuario.document}}">
             </div>
             <div>
                 <label>Senha:</label>
-                <input type="text" name="" id="senha">
+                <input type="password" name="personal" id="6"  value="{{usuario.passwd}}">
             </div>
             <div class="btt">
-                <label >"</label>
-                <button>EDITAR</button>
+                <button (click)="allowEdit('personal')" >EDITAR</button>
+                <button *ngIf="editPersonal" (click)="saveEdits('personal')" >SALVAR</button>
             </div>
         </div>
         <h2>Endereço:</h2>
         <div class="info-pess">
             <div>
                 <label>Rua:</label>
-                <input type="text" name="" id="rua">
+                <input type="text" name="address" id="7" value="{{usuario.address?.street}}">
             </div>
             <div>
                 <label>CEP:</label>
-                <input type="text" name="" id="postal">
+                <input type="text" name="address" id="8" value="{{usuario.address?.postal_code}}">
             </div>
             <div>
                 <label>Pais:</label>
-                <input type="text" name="" id="country">
+                <input type="text" name="address" id="9" value="{{usuario.address?.country}}">
             </div>
             <div>
                 <label>Estado:</label>
-                <input type="text" name="" id="state">
+                <input type="text" name="address" id="10" value="{{usuario.address?.state}}">
             </div>
             <div>
                 <label>Cidade:</label>
-                <input type="text" name="" id="city">
+                <input type="text" name="address" id="11" value="{{usuario.address?.city}}">
             </div>
             <div class="btt">
-                <label >"</label>
-                <button>EDITAR</button>
+                <button (click)="allowEdit('address')" >EDITAR</button>
+                <button *ngIf="editAddress" (click)="saveEdits('address')" >SALVAR</button>
             </div>
         </div>
 

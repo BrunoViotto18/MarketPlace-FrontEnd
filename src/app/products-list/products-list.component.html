@@ -1,6 +1,9 @@
 <div class="products-list ">
+    <product-component [stock]="stock" *ngFor="let stock of stocks">
 
-    <div class="product-component" *ngFor="let stock of stocks">
+    </product-component>
+
+    <!-- <div class="product-component" *ngFor="let stock of stocks">
         
         <img src={{stock.product?.image}} alt=""  [routerLink]="['/product',stock.product?.id]">
         
@@ -14,10 +17,10 @@
                 {{product.description}}
         </h2> -->
 
-        <button [routerLink]="['/product',stock.id,stock.product?.id]">Comprar Agora</button>
+        <!-- <button [routerLink]="['/product',stock.id,stock.product?.id]">Comprar Agora</button>
         
-        <!-- <heart-button [productId]="stock.product?.id"></heart-button> -->
-    </div>
+        <heart-button [stockId]="stock.product?.id"></heart-button>
+    </div> --> 
 </div>
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Address} from '../Classes';
 
 @Component({
   selector: 'app-address-register',

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario,Address } from '../Classes';
 
 @Component({
   selector: 'app-client-register',
