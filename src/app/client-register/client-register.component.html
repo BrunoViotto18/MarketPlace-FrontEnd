@@ -1,9 +1,21 @@
 <div class="general-form-container">
-    <div class="radio">
-        <label></label>
-        <input type="radio" name="" id="">
-        <input type="radio" name="" id="">
+    <div>
+
+        <div class="form-group">
+            <label class="col-sm-12">
+                <input type="radio" name="paymentType">
+                Usuario
+            </label>
+            </div>
+        <div class="form-group">
+           
+            <label class="col-sm-12">
+                  <input type="radio" name="paymentType">
+                  Lojista
+            </label>
+            </div>
     </div>
+
     <custom-input [label]="placeholder" *ngFor="let placeholder of placeholders"></custom-input>
 
     <div class="general-form-buttons">

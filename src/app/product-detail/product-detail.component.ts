@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../Stock';
+import { Product } from '../Classes';
 import axios from 'axios';
 
 

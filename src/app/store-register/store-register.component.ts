@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '../Classes';
 
 @Component({
   selector: 'app-store-register',

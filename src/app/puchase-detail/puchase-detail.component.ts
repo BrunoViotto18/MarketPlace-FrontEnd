@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Purchase, Stock } from '../Classes';
 @Component({
   selector: 'app-puchase-detail',
   templateUrl: './puchase-detail.component.html',

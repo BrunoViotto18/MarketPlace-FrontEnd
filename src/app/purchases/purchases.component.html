@@ -1,13 +1,16 @@
 <div class="general">
-    <div class="topline">
-        <h1>Minhas compras</h1>
-        <img src="https://cdn-icons-png.flaticon.com/512/3612/3612651.png" alt="">
-    </div>
-    <div class="container">
-        <img src="https://www.fastshop.com.br/wcsstore/FastShopCAS//imagens/_AE_Apple/AEMLL93BZAAZL/AEMLL93BZAAZL_PRD_447_1.jpg" alt="">
-        <div>
-            <h2 id="Compra"></h2>
-            <h2 id="total">Total da compra: </h2>
+    <div *ngFor="let purch of purchases, let i = index">
+        <div class="topline">
+            <h1>Minhas compras</h1>
+            {{purch.product[0].name}}
+            <img src="" alt="">
+        </div>
+        <div class="container">
+            <img src="https://www.fastshop.com.br/wcsstore/FastShopCAS//imagens/_AE_Apple/AEMLL93BZAAZL/AEMLL93BZAAZL_PRD_447_1.jpg" alt="">
+            <div>
+                <h2 id="Compra"></h2>
+                <h2 id="total">Total da compra: </h2>
+            </div>
         </div>
     </div>
 </div>
