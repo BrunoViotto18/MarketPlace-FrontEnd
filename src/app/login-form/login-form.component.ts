@@ -26,9 +26,10 @@ export class LoginFormComponent implements OnInit {
     let login = document.querySelector(`#${this.inputs[0].label}`) as HTMLInputElement
     let senha = document.querySelector(`#${this.inputs[1].label}`) as HTMLInputElement
 
+    let client = document.querySelector(`#client`) as HTMLInputElement
+
     if (!login.reportValidity())
       return
-    
     if (!senha.reportValidity())
       return
 
@@ -37,24 +38,40 @@ export class LoginFormComponent implements OnInit {
       "passwd": senha.value
     });
     
-    var config = {
-      method: 'post',
-      url: 'http://localhost:5164/Client/login',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      data : data
-    };
-    
+    var config = {}
+    var cliente: string
+
+    if (client.checked){
+      cliente = "1"
+      config = {
+        method: 'post',
+        url: 'http://localhost:5164/Client/login',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+    }
+    else{
+      config = {
+        method: 'post',
+        url: 'http://localhost:5164/Owner/login',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+      cliente = "0"
+    }
+
     let instance = this
     axios(config)
     .then(function (response) {
       localStorage.setItem("authToken", response.data)
+      localStorage.setItem("client", cliente)
       instance.router.navigate(['/']).then(() =>{
         window.location.reload();
       });
-
-      
     })
     .catch(function (error) {
       if (error.response.data == 'Invalid credentials')

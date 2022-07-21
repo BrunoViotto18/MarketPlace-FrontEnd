@@ -1,3 +1,8 @@
+label{
+    margin: 0;
+    padding: 0;
+}
+
 .general-form-container>h1{
     font-weight: bold;
 }
@@ -19,3 +24,13 @@
     font-size: 15;
 }
 
+.radios{
+    display: flex;
+    gap: 40px;
+}
+
+.radios > div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
