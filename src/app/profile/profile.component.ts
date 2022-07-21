@@ -8,6 +8,7 @@ import { Usuario,Address } from '../Classes';
 export class ProfileComponent implements OnInit {
   editPersonal : boolean = false
   editAddress : boolean = false
+  
   endereco : Address = {street: 'Pedro Gusso 870',
     city: 'Curitiba',
     state: 'Paraná',
@@ -66,6 +67,8 @@ export class ProfileComponent implements OnInit {
       this.disableInputs(name)
     
   }
+
+  
 
  }
 
