@@ -39,11 +39,14 @@ export interface Store{
 }
 
 export interface Purchase {
-    date_purchase : Date,
+    id: number,
+    clientId : number
+    storeId : number
+    data_purchase : Date,
     purchase_value: number,
     payment_type : number,
     purchase_status : number,
     confirmation_number : number,
     number_nf : number,
-    product : Array<Product>
+    product : Product
 }
