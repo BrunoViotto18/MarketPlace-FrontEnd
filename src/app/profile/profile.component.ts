@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario,Address } from '../Classes';
+import axios from 'axios';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -9,28 +10,52 @@ export class ProfileComponent implements OnInit {
   editPersonal : boolean = false
   editAddress : boolean = false
   
-  endereco : Address = {street: 'Pedro Gusso 870',
-    city: 'Curitiba',
-    state: 'Paraná',
-    country: 'Brazil',
-    postal_code: "81050120"}
+
+  endereco : Address = {street: 'Rua',
+    city: 'Cidade',
+    state: 'Estado',
+    country: 'Pais',
+    postal_code: "0000000000"}
 
   usuario : Usuario = {id: 1,
-    name: 'Nathan',
-    dateOfBirth: new Date("2003-01-16"),
-    document: '10783211910',
-    email: 'nathan.ansayc@gmail.com',
-    phone: '41995466312',
-    passwd: 'nanathan147', 
-    login: 'nates1803',
+    name: 'Nome',
+    dateOfBirth: new Date("1900-01-01"),
+    document: '11111111111',
+    email: 'email@email.com',
+    phone: '999999999999',
+    passwd: 'password', 
+    login: 'user',
     address : this.endereco}
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(localStorage.getItem('authToken'));
+    var config = {
+      method: 'get',
+      url: 'http://localhost:5164/Client/informations',
+      headers: {
+        "Authorization" : `Bearer ${localStorage.getItem('authToken')}`
+      },
+    };
+
+    var instance = this
+    axios(config)
+      .then(function (response) {
+
+        instance.usuario = response.data
+        const date = new Date(instance.usuario.dateOfBirth.toString())
+        instance.usuario.dateOfBirth = date
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
     this.disableInputs('address')
     this.disableInputs('personal')
-
+    this.usuario.dateOfBirth.toDateString()
+    
+    
 
   }
 
@@ -59,6 +84,8 @@ export class ProfileComponent implements OnInit {
   }
 
   saveEdits(name :string){
+    
+
     if(name == 'address'){
     this.editAddress = false}
     if(name == 'personal')

@@ -27,7 +27,7 @@
 
   <nav class="top-bar__navigation" >
     <ul class="top-bar__nav-links">
-      <li *ngIf="logged" (click)="hideNavigationLinks()" >Perfil</li>
+      <li *ngIf="logged" (click)="hideNavigationLinks()" [routerLink]="['/profile']" >Perfil</li>
       <li *ngIf="logged" (click)="hideNavigationLinks()" [routerLink]="['/purchases,client.id']" >Purchases</li>
       <li *ngIf="logged" (click)="hideNavigationLinks()" [routerLink]="['/wishlist']">WishList</li>
       <li *ngIf="logged" (click)="hideNavigationLinks();LogOut()">LogOut</li>

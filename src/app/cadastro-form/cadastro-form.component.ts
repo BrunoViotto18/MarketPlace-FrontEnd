@@ -51,20 +51,20 @@ export class CadastroFormComponent implements OnInit {
     //let nome = document.body.querySelector('.cadastro-address') as NodeListOf<HTMLInputElement>
 
     var data = JSON.stringify({
-      "name": `${}`,
-      "date_of_birth": `${}`,
-      "document": `${}`,
-      "email": `${}`,
-      "phone": `${}`,
-      "login": `${}`,
-      "passwd": `${}`,
-      "address": {
-        "street": `${}`,
-        "city": `${}`,
-        "state": `${}`,
-        "country": `${}`,
-        "postal_code": `${}`
-      }
+      // "name": `${}`,
+      // "date_of_birth": `${}`,
+      // "document": `${}`,
+      // "email": `${}`,
+      // "phone": `${}`,
+      // "login": `${}`,
+      // "passwd": `${}`,
+      // "address": {
+      //   "street": `${}`,
+      //   "city": `${}`,
+      //   "state": `${}`,
+      //   "country": `${}`,
+      //   "postal_code": `${}`
+      //}
     });
     
     var config = {
