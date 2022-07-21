@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CustomInputComponent implements OnInit {
 
   @Input()
-  label = '';
+  label = ''
+  labelView = ''
   @Input()
   type = 'text'
   @Input()
@@ -17,6 +18,10 @@ export class CustomInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.labelView = this.label
+    while (this.label.indexOf(' ') != -1 || this.label.indexOf('/') != -1){
+      this.label = this.label.replace(' ', '_').replace('/', '_')
+    }
   }
 
   inputFocus(event: Event){

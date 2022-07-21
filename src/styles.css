@@ -134,7 +134,8 @@ heart-button{
 app-address-register,
 app-client-register,
 app-store-register,
-app-login-form{
+app-login-form,
+app-cadastro-form{
   display: grid;
   place-items: center;
   min-height: calc(100vh - 2 * var(--topBarHeight));

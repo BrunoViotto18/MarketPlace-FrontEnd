@@ -20,6 +20,7 @@ import { CarrosselComponent } from './carrossel/carrossel.component';
 import { ProductComponentComponent } from './product-component/product-component.component';
 import { PurchasesComponent } from './purchases/purchases.component';
 import { PuchaseDetailComponent } from './puchase-detail/puchase-detail.component';
+import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PuchaseDetailComponent } from './puchase-detail/puchase-detail.componen
     CarrosselComponent,
     ProductComponentComponent,
     PurchasesComponent,
-    PuchaseDetailComponent
+    PuchaseDetailComponent,
+    CadastroFormComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { PuchaseDetailComponent } from './puchase-detail/puchase-detail.componen
       {path: 'wishlist', component:WishlistComponent},
       {path: 'profile', component:ProfileComponent},
       {path: 'purchases', component:PurchasesComponent},
-      {path: 'purchase/:purchaseID', component:PuchaseDetailComponent}
+      {path: 'purchase/:purchaseID', component:PuchaseDetailComponent},
+      {path: 'cadastro', component:CadastroFormComponent}
     ])
   ],
   providers: [],

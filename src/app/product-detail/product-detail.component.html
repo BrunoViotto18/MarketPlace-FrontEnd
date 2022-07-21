@@ -14,17 +14,17 @@
 <div class="details1">
     <h1>Outros produtos</h1>
     <carrossel class="products-carrossel">
-            <ng-container *ngFor="let produto of products">
-                <div class="product-component">
-                    <img src={{produto.image}} alt=""  [routerLink]="['/produto',produto.id]">
-                    <h2><p>{{produto.unit_price | currency:'BRL'}}</p></h2>
-                    <h3  [routerLink]="['/product',produto.id]">
-                        <a [title]="produto.name + 'details'" class="textoverflow" >{{produto.name}}</a>
-                    </h3>
-                    <button [routerLink]="['/product',produto.id]">Comprar Agora</button>
-                    <heart-button [stockId]="produto.id"></heart-button>
-                </div>
-            </ng-container>
+        <ng-container *ngFor="let produto of products">
+            <div class="product-component">
+                <img src={{produto.image}} alt=""  [routerLink]="['/produto',produto.id]">
+                <h2><p>{{produto.unit_price | currency:'BRL'}}</p></h2>
+                <h3  [routerLink]="['/product',produto.id]">
+                    <a [title]="produto.name + 'details'" class="textoverflow" >{{produto.name}}</a>
+                </h3>
+                <button [routerLink]="['/product',produto.id]">Comprar Agora</button>
+                <heart-button [stockId]="produto.id"></heart-button>
+            </div>
+        </ng-container>
     </carrossel>
 </div>
 
