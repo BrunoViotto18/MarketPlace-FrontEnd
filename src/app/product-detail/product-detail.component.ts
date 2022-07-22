@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Product } from '../Classes';
+import { Product, Stock } from '../Classes';
 import axios from 'axios';
 
 
@@ -13,7 +13,7 @@ import axios from 'axios';
 export class ProductDetailComponent implements OnInit {
 
   titlePage="Product Detail"
-  product: Product | undefined
+  product: Stock | undefined
   products: Array<Product> = []
   client: boolean = false
   stockId: Number = -1
@@ -61,7 +61,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  comprar(){
+  async comprar(){
 
     let paymentType: Number | undefined
 
@@ -93,11 +93,11 @@ export class ProductDetailComponent implements OnInit {
     };
     
     let loja = -1
-    let product = -1
-    axios(config)
+    let prod = -1
+    await axios(config)
     .then(function (response) {
-      loja = response.data.loja
-      product = response.data.product
+      loja = response.data.storeId
+      prod = response.data.productId
     })
     .catch(function (error) {
       console.log(error);
@@ -105,18 +105,24 @@ export class ProductDetailComponent implements OnInit {
       return;
     });
     
+    if (this.product === undefined)
+      return
+
+    console.log(this.product)
+    console.log(this.product.unit_price)
 
     var data = JSON.stringify({
-      "data_purchase": Date.now(),
-      "purchase_value": this.product?.unit_price,
+      "id": -1,
+      "data_purchase": new Date(),
+      "purchase_value": this.product.unit_price,
       "payment_type": paymentType,
       "purchase_status": 1,
-      "confirmation_number": null,
-      "number_nf": null,
+      "confirmation_number": 'null',
+      "number_nf": 'null',
       "storeId": loja,
-      "clientId": null,
+      "clientId": this.stockId,
       "product": {
-        "id": product
+        "id": prod
       }
     });
     
@@ -136,7 +142,7 @@ export class ProductDetailComponent implements OnInit {
     })
     .catch(function (error) {
       console.log(error);
-      alert("Falha na compra")
+      alert("Falha na compra 2")
     });
   }
 
