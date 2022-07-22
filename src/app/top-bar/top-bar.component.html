@@ -31,7 +31,7 @@
       <li *ngIf="logged && client" (click)="hideNavigationLinks()" [routerLink]="['/purchases,client.id']" >Purchases</li>
       <li *ngIf="logged && client" (click)="hideNavigationLinks()" [routerLink]="['/wishlist']">WishList</li>
 
-      <li *ngIf="logged && !client" (click)="hideNavigationLinks()" [routerLink]="['/purchases']">Vendas</li>
+      <li *ngIf="logged && !client" (click)="hideNavigationLinks()" [routerLink]="['/']">Vendas</li>
 
       <li *ngIf="logged" (click)="hideNavigationLinks();LogOut()">LogOut</li>
       <li *ngIf="!logged" (click)="hideNavigationLinks()" [routerLink]="['/login']">Login</li>

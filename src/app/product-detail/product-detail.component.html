@@ -5,8 +5,26 @@
         <!-- <p>{{product.description}}</p> -->
         <h1>{{product.name}}</h1>
         <h2>{{product.unit_price  | currency:'BRL'}}</h2>
+        <div class="radios">
+            <div>
+                <input type="radio" id="credito" name="radio" checked>
+                <label for="credito">Crédito</label>
+            </div>
+            <div>
+                <input type="radio" id="debito" name="radio">
+                <label for="debito">Débito</label>
+            </div>
+            <div>
+                <input type="radio" id="pix" name="radio">
+                <label for="pix">Pix</label>
+            </div>
+            <div>
+                <input type="radio" id="boleto" name="radio">
+                <label for="boleto">Boleto</label>
+            </div>
+        </div>
         <div class="baguio">
-            <button type="button" *ngIf="client">Comprar</button>
+            <button type="button" (click)="comprar()" *ngIf="client">Comprar</button>
         </div>
     </div>
 </div>

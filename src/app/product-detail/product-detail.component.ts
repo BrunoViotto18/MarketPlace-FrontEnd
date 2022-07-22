@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../Classes';
 import axios from 'axios';
+import { compileDeclareDirectiveFromMetadata } from '@angular/compiler';
 
 
 @Component({
@@ -56,16 +57,58 @@ export class ProductDetailComponent implements OnInit {
     .catch(function (error:any) {
       console.log(error);
     });
-  
-
-    
   }
 
-  
-  quantity:number=1;
+  comprar(){
 
-    //this.product = products.find(product => product.id === porductIdFromroute);
-  
+    let paymentType: Number
+
+    const credito = document.querySelector('.radios > div > #credito') as HTMLInputElement
+    const debito = document.querySelector('.radios > div > #debito') as HTMLInputElement
+    const pix = document.querySelector('.radios > div > #pix') as HTMLInputElement
+    const boleto = document.querySelector('.radios > div > #boleto') as HTMLInputElement
+
+    if (credito.checked)
+      paymentType = 0
+    else if (debito.checked)
+      paymentType = 1
+    else if (pix.checked)
+      paymentType = 2
+    else if (boleto.checked)
+      paymentType = 3
+
+    var data = JSON.stringify({
+      "data_purchase": Date.now,
+      "purchase_value": this.product?.unit_price,
+      "payment_type": 1,
+      "purchase_status": 1,
+      "confirmation_number": "26548547",
+      "number_nf": "5436865764364",
+      "storeId": 1,
+      "clientId": 1,
+      "product": {
+        "id": 1
+      }
+    });
+    
+    var config = {
+      method: 'post',
+      url: 'http://localhost:5164/Purchase/make',
+      headers: { 
+        'Content-Type': 'application/json'
+      },
+      data : data
+    };
+    
+    axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
 }
 
 
