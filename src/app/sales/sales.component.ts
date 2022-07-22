@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Stock,Product,Purchase } from '../Classes';
-import axios from "axios";
-
+import { Purchase } from '../Classes';
+import axios from 'axios';
 @Component({
-  selector: 'app-purchases',
-  templateUrl: './purchases.component.html',
-  styleUrls: ['./purchases.component.css']
+  selector: 'app-sales',
+  templateUrl: './sales.component.html',
+  styleUrls: ['./sales.component.css']
 })
-export class PurchasesComponent implements OnInit {
+export class SalesComponent implements OnInit {
 
   purchases : Array<Purchase> = []
 
@@ -17,7 +16,7 @@ export class PurchasesComponent implements OnInit {
   ngOnInit(): void {  
 
     var config = {
-      "url": "http://localhost:5164/Purchase/ownerPurchase",
+      "url": "http://localhost:5164/Purchase/clientPurchase",
       "method": "GET",
       headers: {
         "Authorization" : `Bearer ${localStorage.getItem('authToken')}`
@@ -38,5 +37,4 @@ export class PurchasesComponent implements OnInit {
 
   getImage(id :number){
   }
-
 }
