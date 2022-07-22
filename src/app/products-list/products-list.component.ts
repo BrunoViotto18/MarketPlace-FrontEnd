@@ -10,11 +10,15 @@ import axios from "axios";
 
 export class ProductsListComponent implements OnInit {
 
-  stocks: Array<Stock> = [];
+  stocks: Array<Stock> = []
+  client: boolean = false
+
   constructor() { }
 
   ngOnInit(): void {
     
+    this.client = localStorage.getItem('client') == '1'
+
     var config = {
       method: 'get',
       url: 'http://localhost:5164/Stock/allWithProducts',

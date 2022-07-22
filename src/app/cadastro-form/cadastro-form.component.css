@@ -1,3 +1,8 @@
+label{
+    margin: 0;
+    padding: 0;
+}
+
 .buttons{
     display: flex;
     gap: 10px;
@@ -5,4 +10,15 @@
 
 .hide{
     display: none;
+}
+
+.radios{
+    display: flex;
+    gap: 40px;
+}
+
+.radios > div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

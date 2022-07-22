@@ -1,5 +1,15 @@
 <div class="general-form-container">
     <h1>Faça Login!</h1>
+    <div class="radios">
+        <div>
+            <input type="radio" id="client" name="radio" checked>
+            <label for="client">Cliente</label>
+        </div>
+        <div>
+            <input type="radio" id="owner" name="radio">
+            <label for="owner">Owner</label>
+        </div>
+    </div>
     <custom-input [label]="input.label" [type]="input.type" [required]="input.required" *ngFor="let input of inputs"></custom-input>
     <button (click) = "verify()">ENTRAR</button>
     <div class="register"> 

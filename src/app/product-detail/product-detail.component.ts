@@ -11,15 +11,19 @@ import axios from 'axios';
 })
 
 export class ProductDetailComponent implements OnInit {
+
   titlePage="Product Detail"
   product: Product | undefined
   products: Array<Product> = []
-  
+  client: boolean = false
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromroute = Number(routeParams.get('stockID'));
+
+    this.client = localStorage.getItem('client') == '1'
     
     var config = {
       method: 'get',

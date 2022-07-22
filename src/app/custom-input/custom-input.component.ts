@@ -28,16 +28,18 @@ export class CustomInputComponent implements OnInit {
     let target = event.target as HTMLInputElement
     let label = document.querySelector(`#${target.id}+label`) as HTMLLabelElement
 
-    if (!label.classList.contains('custom-input-focus'))
+    if (!label.classList.contains('custom-input-focus')){
       label.classList.toggle('custom-input-focus')
+    }
   }
 
   inputBlur(event: Event){
     let target = event.target as HTMLInputElement
     let label = document.querySelector(`#${target.id}+label`) as HTMLLabelElement
 
-    if (target.value.length == 0)
+    if (target.value.length == 0){
       label.classList.toggle('custom-input-focus')
+    }
   }
 
 }

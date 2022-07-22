@@ -1,13 +1,23 @@
 <form class="cadastro-user general-form-container">
     <ng-container *ngFor="let label of labelsUser">
-        <custom-input [label]="label" [required]="true"></custom-input>
+        <custom-input [label]="label.label" [type]="label.type" [required]="label.required"></custom-input>
     </ng-container>
+    <div class="radios">
+        <div>
+            <input type="radio" id="client" name="radio" checked>
+            <label for="client">Cliente</label>
+        </div>
+        <div>
+            <input type="radio" id="owner" name="radio">
+            <label for="owner">Owner</label>
+        </div>
+    </div>
     <button type="button" (click)="toggleForms()" >CONTINUAR</button>
 </form>
 
 <form class="cadastro-address general-form-container hide">
     <ng-container *ngFor="let label of labelsAddress">
-        <custom-input [label]="label" [required]="true"></custom-input>
+        <custom-input [label]="label.label" [type]="label.type" [required]="label.required"></custom-input>
     </ng-container>
     <div class="buttons">
         <button type="button" (click)="toggleForms()" >VOLTAR</button>
