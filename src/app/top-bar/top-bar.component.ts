@@ -12,12 +12,19 @@ export class TopBarComponent implements OnInit {
   @Input()
   titulo = ""
 
+  client: boolean | undefined
+
   logged : boolean = false
 
 
   constructor() { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('client') == '1')
+      this.client = true
+    else if (localStorage.getItem('client') == '0')
+      this.client = false
+
     let token = localStorage.getItem("authToken")
     console.log(token)
     
