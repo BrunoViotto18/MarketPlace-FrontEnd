@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../Classes';
 import axios from 'axios';
-import { compileDeclareDirectiveFromMetadata } from '@angular/compiler';
 
 
 @Component({
@@ -17,12 +16,15 @@ export class ProductDetailComponent implements OnInit {
   product: Product | undefined
   products: Array<Product> = []
   client: boolean = false
+  stockId: Number = -1
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromroute = Number(routeParams.get('stockID'));
+
+    this.stockId = productIdFromroute
 
     this.client = localStorage.getItem('client') == '1'
     
@@ -61,7 +63,7 @@ export class ProductDetailComponent implements OnInit {
 
   comprar(){
 
-    let paymentType: Number
+    let paymentType: Number | undefined
 
     const credito = document.querySelector('.radios > div > #credito') as HTMLInputElement
     const debito = document.querySelector('.radios > div > #debito') as HTMLInputElement
@@ -77,25 +79,53 @@ export class ProductDetailComponent implements OnInit {
     else if (boleto.checked)
       paymentType = 3
 
+    if (paymentType === undefined)
+      return
+
+    let numbers = '01234567889'
+
+    // get store & product
+    let config = {
+      method: 'get',
+      url: `http://localhost:5164/Stock/info/${this.stockId}`,
+      headers: { },
+      data: ''
+    };
+    
+    let loja = -1
+    let product = -1
+    axios(config)
+    .then(function (response) {
+      loja = response.data.loja
+      product = response.data.product
+    })
+    .catch(function (error) {
+      console.log(error);
+      alert('falha na compra')
+      return;
+    });
+    
+
     var data = JSON.stringify({
-      "data_purchase": Date.now,
+      "data_purchase": Date.now(),
       "purchase_value": this.product?.unit_price,
-      "payment_type": 1,
+      "payment_type": paymentType,
       "purchase_status": 1,
-      "confirmation_number": "26548547",
-      "number_nf": "5436865764364",
-      "storeId": 1,
-      "clientId": 1,
+      "confirmation_number": null,
+      "number_nf": null,
+      "storeId": loja,
+      "clientId": null,
       "product": {
-        "id": 1
+        "id": product
       }
     });
     
-    var config = {
+    config = {
       method: 'post',
       url: 'http://localhost:5164/Purchase/make',
       headers: { 
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${localStorage.getItem('authToken')}`
       },
       data : data
     };
@@ -106,6 +136,7 @@ export class ProductDetailComponent implements OnInit {
     })
     .catch(function (error) {
       console.log(error);
+      alert("Falha na compra")
     });
   }
 
