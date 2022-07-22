@@ -16,10 +16,13 @@
             </div>
     </div>
 
-    <custom-input [label]="placeholder" *ngFor="let placeholder of placeholders"></custom-input>
+    <custom-input [label]="placeholder" id="{{placeholder}}" *ngFor="let placeholder of placeholdersClient"></custom-input>
+    <h2>Endereço</h2>
+    <custom-input [label]="placeholder" id="{{placeholder}}" *ngFor="let placeholder of placeholdersAddress"></custom-input>
+
 
     <div class="general-form-buttons">
-        <button>Salvar Mudanças</button>
+        <button (click)="save">Salvar Mudanças</button>
         <button>Cancelar</button>
     </div>
 

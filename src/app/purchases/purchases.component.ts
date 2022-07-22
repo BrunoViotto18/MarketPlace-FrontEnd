@@ -14,24 +14,29 @@ export class PurchasesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
 
     var config = {
-      "url": "http://localhost:5164/Purchase/clientPurchase/1",
+      "url": "http://localhost:5164/Purchase/clientPurchase",
       "method": "GET",
-      "timeout": 0,
+      headers: {
+        "Authorization" : `Bearer ${localStorage.getItem('authToken')}`
+      },
     };
 
     var instance = this;
     axios(config)
     .then(function (response:any) {
-      instance.purchases = response.data
-      console.log(response.data);
+      instance.purchases = response.data 
+      console.log(instance.purchases)
     })
     .catch(function (error:any) {
       console.log(error);
     });
+    
+  }
 
+  getImage(id :number){
   }
 
 }
