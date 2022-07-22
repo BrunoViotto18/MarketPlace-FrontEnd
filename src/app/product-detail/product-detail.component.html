@@ -6,7 +6,7 @@
         <h1>{{product.name}}</h1>
         <h2>{{product.unit_price  | currency:'BRL'}}</h2>
         <div class="baguio">
-            <button type="button">Comprar</button>
+            <button type="button" *ngIf="client">Comprar</button>
         </div>
     </div>
 </div>
@@ -22,7 +22,7 @@
                     <a [title]="produto.name + 'details'" class="textoverflow" >{{produto.name}}</a>
                 </h3>
                 <button [routerLink]="['/product',produto.id]">Comprar Agora</button>
-                <heart-button [stockId]="produto.id"></heart-button>
+                <heart-button [stockId]="produto.id" *ngIf="client"></heart-button>
             </div>
         </ng-container>
     </carrossel>

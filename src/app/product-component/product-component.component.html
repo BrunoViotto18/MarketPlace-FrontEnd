@@ -13,5 +13,5 @@
     
     <button [routerLink]="['/product', stock.id]">Comprar Agora</button>
     
-    <heart-button [stockId]="stock.id"></heart-button>
+    <heart-button [stockId]="stock.id" *ngIf="client"></heart-button>
 </div>

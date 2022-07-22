@@ -10,6 +10,8 @@ export class ProductComponentComponent implements OnInit {
 
   @Input()
   stock: Stock | undefined
+  @Input()
+  client: boolean = false
 
   product: Product | undefined
 
