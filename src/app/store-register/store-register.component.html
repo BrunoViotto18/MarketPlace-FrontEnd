@@ -3,7 +3,7 @@
     <custom-input [label]="placeholder" *ngFor="let placeholder of placeholders"></custom-input>
 
     <div class="general-form-buttons">
-        <button>Salvar Mudanças</button>
+        <button (click)="storeRegister()">Salvar Mudanças</button>
         <button>Cancelar</button>
     </div>
 

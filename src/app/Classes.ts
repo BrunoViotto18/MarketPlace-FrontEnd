@@ -36,6 +36,10 @@ export interface Product{
 
 export interface Store{
     id: number,
+    name: string,
+    cnpj: string,
+    owner: Usuario | null
+    purchases : Array<Purchase> | null
 }
 
 export interface Purchase {

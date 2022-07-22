@@ -1,0 +1,17 @@
+<div class="general-form-container">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecione a Loja
+        </button>
+        <div  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a *ngFor="let purch of stores, let i = index" class="dropdown-item" (click)="changeValue(stores[i].name,stores[i].id)">{{stores[i].name}}</a>
+        </div>
+      </div>
+    <custom-input [label]="placeholder" *ngFor="let placeholder of placeholders"></custom-input>
+
+    <div class="general-form-buttons">
+        <button (click)="productRegister()">Salvar Mudanças</button>
+        <button>Cancelar</button>
+    </div>
+
+</div>

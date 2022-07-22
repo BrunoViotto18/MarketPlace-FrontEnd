@@ -21,6 +21,8 @@ import { ProductComponentComponent } from './product-component/product-component
 import { PurchasesComponent } from './purchases/purchases.component';
 import { PuchaseDetailComponent } from './puchase-detail/puchase-detail.component';
 import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
+import { SalesComponent } from './sales/sales.component';
+import { ProductRegisterComponent } from './product-register/product-register.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
     ProductComponentComponent,
     PurchasesComponent,
     PuchaseDetailComponent,
-    CadastroFormComponent
+    CadastroFormComponent,
+    SalesComponent,
+    ProductRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,8 @@ import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
       {path: 'profile', component:ProfileComponent},
       {path: 'purchases', component:PurchasesComponent},
       {path: 'purchase/:purchaseID', component:PuchaseDetailComponent},
+      {path: 'sales', component:SalesComponent},
+      {path: 'product-register', component:ProductRegisterComponent},
       {path: 'cadastro', component:CadastroFormComponent}
     ])
   ],
