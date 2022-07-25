@@ -1,3 +1,5 @@
+<top-bar [titulo]="'Wishlist'"></top-bar>
+
 <div class="wishlist">
     <!-- <div *ngFor='let product of products' class='wishlist-item'>{{product.image}}  {{product.unit_price | currency}} {{product.description}}-->
         <!-- <div class="wishlist-item">
@@ -8,7 +10,7 @@
                 <p class="textoverflow"></p>
         </div> -->
         <!-- </div> -->
-    <div *ngFor='let stock of stocks' class='wishlist-item'>
+    <div *ngFor='let stock of stocks' class='wishlist-item' [routerLink]="['/product', stock.id]">
         <ng-container *ngIf="stock.product">
             <img src={{stock.product.image}} alt="Produto">
             <div class='wishlist-item-details'>

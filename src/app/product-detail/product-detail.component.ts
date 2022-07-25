@@ -26,7 +26,7 @@ export class ProductDetailComponent implements OnInit {
 
     this.stockId = productIdFromroute
 
-    this.client = localStorage.getItem('client') == '1'
+    this.client = localStorage.getItem('client') == '1' || localStorage.getItem('authToken')?.length == 0
     
     var config = {
       method: 'get',

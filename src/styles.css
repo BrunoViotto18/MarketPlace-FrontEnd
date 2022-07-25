@@ -27,10 +27,14 @@ body{
 app-root{
   display: block;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 router-outlet + *  {
   padding: 0 16px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -185,4 +189,9 @@ app-cadastro-form{
 
 carrossel{
   position: relative;
+}
+
+top-bar{
+  align-self: baseline;
+  width: 100vw;
 }

@@ -19,7 +19,7 @@ export class SalesComponent implements OnInit {
       this.router.navigate(['/login'])
 
     var config = {
-      "url": "http://localhost:5164/Purchase/clientPurchase",
+      "url": "http://localhost:5164/Purchase/ownerPurchase",
       "method": "GET",
       headers: {
         "Authorization" : `Bearer ${localStorage.getItem('authToken')}`

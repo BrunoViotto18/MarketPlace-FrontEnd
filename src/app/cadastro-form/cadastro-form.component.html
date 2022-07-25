@@ -1,3 +1,5 @@
+<top-bar [titulo]="'Cadastro'"></top-bar>
+
 <form class="cadastro-user general-form-container">
     <ng-container *ngFor="let label of labelsUser">
         <custom-input [label]="label.label" [type]="label.type" [required]="label.required"></custom-input>

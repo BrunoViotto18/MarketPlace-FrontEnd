@@ -1,11 +1,12 @@
-<!-- <app-top-bar  [título] ="titlePage"></app-top-bar> -->
+<top-bar [titulo] ="'Produto'"></top-bar>
+
 <div *ngIf="stock" class="details">
     <img src={{stock.product?.image}} alt="">
     <div class="fontformatting">
         <!-- <p>{{product.description}}</p> -->
         <h1>{{stock.product?.name}}</h1>
         <h2>{{stock.unit_price  | currency:'BRL'}}</h2>
-        <div class="radios">
+        <div class="radios" *ngIf="client">
             <div>
                 <input type="radio" id="credito" name="radio" checked>
                 <label for="credito">Crédito</label>

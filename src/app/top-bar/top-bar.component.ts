@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-top-bar',
+  selector: 'top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css'],
   // host: {
@@ -17,7 +18,7 @@ export class TopBarComponent implements OnInit {
   logged : boolean = false
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('client') == '1')
@@ -59,7 +60,9 @@ export class TopBarComponent implements OnInit {
 
   LogOut(){
     localStorage.setItem("authToken", "")
-    this.reloadCurrentPage()
+    this.router.navigate(['/']).then(() => {
+      this.reloadCurrentPage()
+    })
   }
 
   reloadCurrentPage() {

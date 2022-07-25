@@ -1,12 +1,13 @@
+<top-bar [titulo]="'Vendas'"></top-bar>
+
 <div class="general">
-    <h1>Minhas Vendas</h1>
-    <div *ngFor="let purch of purchases, let i = index">
-        <div class="container" (load)="getImage(purch.product.id)" >
+    <ng-container *ngFor="let purch of purchases, let i = index">
+        <div class="container" (load)="getImage(purch.product.id)" [routerLink]="['/sale', purch.id]">
             <img src="{{purch.product.image}}" alt="" >
             <div>
                 <h2 id="Compra">{{purch.product.name}}</h2>
                 <h2 id="total">Total da compra: {{purch.purchase_value | currency:'BRL'}}</h2>
             </div>
         </div>
-    </div>
+    </ng-container>
 </div>

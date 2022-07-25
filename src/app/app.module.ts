@@ -65,6 +65,7 @@ import { SaleDetailComponent } from './sale-detail/sale-detail.component';
       {path: 'purchases', component:PurchasesComponent},
       {path: 'purchase/:purchaseID', component:PuchaseDetailComponent},
       {path: 'sales', component:SalesComponent},
+      {path: 'sale/:saleID', component:SaleDetailComponent},
       {path: 'product-register', component:ProductRegisterComponent},
       {path: 'cadastro', component:CadastroFormComponent}
     ])
