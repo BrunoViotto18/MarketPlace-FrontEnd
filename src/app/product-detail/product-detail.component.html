@@ -1,10 +1,10 @@
 <!-- <app-top-bar  [título] ="titlePage"></app-top-bar> -->
-<div *ngIf="product" class="details">
-    <img src={{product.image}} alt="">
+<div *ngIf="stock" class="details">
+    <img src={{stock.product?.image}} alt="">
     <div class="fontformatting">
         <!-- <p>{{product.description}}</p> -->
-        <h1>{{product.name}}</h1>
-        <h2>{{product.unit_price  | currency:'BRL'}}</h2>
+        <h1>{{stock.product?.name}}</h1>
+        <h2>{{stock.unit_price  | currency:'BRL'}}</h2>
         <div class="radios">
             <div>
                 <input type="radio" id="credito" name="radio" checked>

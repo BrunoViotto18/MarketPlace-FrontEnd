@@ -1,5 +1,5 @@
 <div class="product-component" *ngIf="stock">
-    <img src={{stock.product?.image}} alt=""  [routerLink]="['/product', stock.product?.id]">
+    <img src={{stock.product?.image}} alt=""  [routerLink]="['/product', stock.id]">
     
     <h2><p>{{stock.unit_price | currency:'BRL'}}</p></h2>
     

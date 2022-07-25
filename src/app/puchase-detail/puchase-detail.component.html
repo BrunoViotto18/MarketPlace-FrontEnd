@@ -1,5 +1,4 @@
 <div class="general">
-
     <div *ngIf="purchase"class="topline">
         <h1>Compra Nº{{purchase.confirmation_number}}</h1>
         <img src="https://cdn-icons-png.flaticon.com/512/3612/3612651.png" alt="">
@@ -7,9 +6,9 @@
     <div *ngIf="purchase" class="container">
         <img src="{{purchase.product.image}}" alt="">
         <div class="info">
-            <h2 id="total">Total da compra: {{purchase.purchase_value}}</h2>
-            <h2 id="total">Data da compra:</h2>
-            <h2 id="total">Tipo de pagamento: {{purchase.payment_type}}</h2>
+            <h2 id="total">Total da compra: {{purchase.purchase_value | currency:'BRL'}}</h2>
+            <h2 id="total">Data da compra: {{purchase.data_purchase | date:'dd/mm/yyyy'}}</h2>
+            <h2 id="total">Tipo de pagamento: {{paymentTypes[purchase.payment_type]}}</h2>
             <h2 id="total">Nota fiscal: {{purchase.number_nf}}</h2>
         </div>
     </div>

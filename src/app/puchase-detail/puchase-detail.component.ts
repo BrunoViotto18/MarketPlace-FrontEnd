@@ -11,6 +11,7 @@ export class PuchaseDetailComponent implements OnInit {
   
   purchase : Purchase | undefined
   purchases : Array<Purchase> = []
+  paymentTypes: Array<string> = ['Crédito', 'Débito', 'Pix', 'Boleto']
   
   constructor(private route: ActivatedRoute) { 
   }

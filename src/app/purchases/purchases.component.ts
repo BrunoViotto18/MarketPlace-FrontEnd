@@ -17,7 +17,7 @@ export class PurchasesComponent implements OnInit {
   ngOnInit(): void {  
 
     var config = {
-      "url": "http://localhost:5164/Purchase/ownerPurchase",
+      "url": "http://localhost:5164/Purchase/clientPurchase",
       "method": "GET",
       headers: {
         "Authorization" : `Bearer ${localStorage.getItem('authToken')}`

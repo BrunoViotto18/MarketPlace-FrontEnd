@@ -13,7 +13,7 @@ import axios from 'axios';
 export class ProductDetailComponent implements OnInit {
 
   titlePage="Product Detail"
-  product: Stock | undefined
+  stock: Stock | undefined
   products: Array<Product> = []
   client: boolean = false
   stockId: Number = -1
@@ -30,15 +30,15 @@ export class ProductDetailComponent implements OnInit {
     
     var config = {
       method: 'get',
-      url: 'http://localhost:5164/Product/all',
+      url: 'http://localhost:5164/Stock/all',
       headers: { },
     };
     
     var instance = this;
     axios(config)
     .then(function (response:any) {
-      var products = response.data as Array<Product>;
-      instance.product = products.find(p => p.id === productIdFromroute)
+      var products = response.data as Array<Stock>;
+      instance.stock = products.find(p => p.id === productIdFromroute)
     })
     .catch(function (error:any) {
       console.log(error);
@@ -54,7 +54,6 @@ export class ProductDetailComponent implements OnInit {
     axios(config)
     .then(function (response:any) {
       instance.products = response.data;
-      console.log(response.data);
     })
     .catch(function (error:any) {
       console.log(error);
@@ -82,8 +81,6 @@ export class ProductDetailComponent implements OnInit {
     if (paymentType === undefined)
       return
 
-    let numbers = '01234567889'
-
     // get store & product
     let config = {
       method: 'get',
@@ -105,22 +102,19 @@ export class ProductDetailComponent implements OnInit {
       return;
     });
     
-    if (this.product === undefined)
+    if (this.stock === undefined)
       return
-
-    console.log(this.product)
-    console.log(this.product.unit_price)
 
     var data = JSON.stringify({
       "id": -1,
       "data_purchase": new Date(),
-      "purchase_value": this.product.unit_price,
+      "purchase_value": this.stock.unit_price,
       "payment_type": paymentType,
       "purchase_status": 1,
       "confirmation_number": 'null',
       "number_nf": 'null',
-      "storeId": loja,
-      "clientId": this.stockId,
+      "storeId": this.stock.id,
+      "clientId": -1,
       "product": {
         "id": prod
       }
@@ -138,11 +132,11 @@ export class ProductDetailComponent implements OnInit {
     
     axios(config)
     .then(function (response) {
+      console.log("Foi?");
       console.log(JSON.stringify(response.data));
     })
     .catch(function (error) {
       console.log(error);
-      alert("Falha na compra 2")
     });
   }
 

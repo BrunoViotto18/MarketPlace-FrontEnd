@@ -1,17 +1,11 @@
 <div class="general">
-    <h1>Minhas compras</h1>
-    <div *ngFor="let purch of purchases, let i = index">
-        <div class="topline">
-            {{purch.product.name}}
-            <img src="" alt="">
-        </div>
+    <ng-container *ngFor="let purch of purchases, let i = index">
         <div class="container" (load)="getImage(purch.product.id)" [routerLink]="['/purchase', purch.id]">
             <img src="{{purch.product.image}}" alt="" >
             <div>
-                <h2 id="Compra"></h2>
-                <h2 id="total">Total da compra: {{purch.purchase_value}}</h2>
-                
+                <h2 id="Compra">{{purch.product.name}}</h2>
+                <h2 id="total">Total da compra: {{purch.purchase_value | currency:'BRL'}}</h2>
             </div>
         </div>
-    </div>
+    </ng-container>
 </div>
