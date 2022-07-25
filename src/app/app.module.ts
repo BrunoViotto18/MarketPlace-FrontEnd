@@ -23,6 +23,7 @@ import { PuchaseDetailComponent } from './puchase-detail/puchase-detail.componen
 import { CadastroFormComponent } from './cadastro-form/cadastro-form.component';
 import { SalesComponent } from './sales/sales.component';
 import { ProductRegisterComponent } from './product-register/product-register.component';
+import { SaleDetailComponent } from './sale-detail/sale-detail.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { ProductRegisterComponent } from './product-register/product-register.co
     PuchaseDetailComponent,
     CadastroFormComponent,
     SalesComponent,
-    ProductRegisterComponent
+    ProductRegisterComponent,
+    SaleDetailComponent
   ],
   imports: [
     BrowserModule,

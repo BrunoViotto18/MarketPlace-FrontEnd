@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product, Stock } from '../Classes';
 import axios from 'axios';
 
@@ -18,7 +18,7 @@ export class ProductDetailComponent implements OnInit {
   client: boolean = false
   stockId: Number = -1
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -61,6 +61,9 @@ export class ProductDetailComponent implements OnInit {
   }
 
   async comprar(){
+
+    if (localStorage.getItem('authToken')?.length == 0)
+      this.router.navigate(['/login'])
 
     let paymentType: Number | undefined
 

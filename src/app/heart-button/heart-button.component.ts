@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import axios from 'axios';
 
 @Component({
@@ -13,7 +14,7 @@ export class HeartButtonComponent implements OnInit {
 
   isWishlisted: boolean = false
 
-  constructor(private ref: ElementRef) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     var config = {
@@ -35,6 +36,9 @@ export class HeartButtonComponent implements OnInit {
   }
 
   fillHeart(event: Event){
+    if (localStorage.getItem('authToken')?.length == 0)
+      this.router.navigate(['/login'])
+
     var config = {}
     if (!this.isWishlisted){
       config = {

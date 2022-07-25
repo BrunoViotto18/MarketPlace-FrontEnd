@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario,Address } from '../Classes';
 import axios from 'axios';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -27,10 +28,12 @@ export class ProfileComponent implements OnInit {
     login: 'user',
     address : this.endereco}
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('authToken'));
+    if (localStorage.getItem('authToken')?.length == 0)
+      this.router.navigate(['/login'])
+
     var config = {
       method: 'get',
       url: 'http://localhost:5164/Client/informations',

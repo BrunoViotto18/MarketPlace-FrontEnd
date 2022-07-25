@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import axios from 'axios';
 import { Stock, Store,Product } from '../Classes';
 import { StoreRegisterComponent } from '../store-register/store-register.component';
@@ -21,11 +22,13 @@ export class ProductRegisterComponent implements OnInit {
   stores : Array<Store> = []
   selectedStoreId : number = 0
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('authToken')?.length == 0)
+      this.router.navigate(['/login'])
+
     this.getAllStores()
-    
   }
 
   getAllStores(){

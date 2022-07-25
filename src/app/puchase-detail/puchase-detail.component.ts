@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Purchase} from '../Classes';
 import axios from 'axios';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-puchase-detail',
   templateUrl: './puchase-detail.component.html',
@@ -13,10 +13,13 @@ export class PuchaseDetailComponent implements OnInit {
   purchases : Array<Purchase> = []
   paymentTypes: Array<string> = ['Crédito', 'Débito', 'Pix', 'Boleto']
   
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, private router: Router) { 
   }
   
   ngOnInit(): void {
+    if (localStorage.getItem('authToken')?.length == 0)
+      this.router.navigate(['/login'])
+
     const routeParams = this.route.snapshot.paramMap;
     const purchaseIdFromroute = Number(routeParams.get('purchaseID'));
 

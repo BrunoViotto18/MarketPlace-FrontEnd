@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '../Classes';
 import axios from 'axios';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-store-register',
@@ -14,9 +15,11 @@ export class StoreRegisterComponent implements OnInit {
     'Nome'
   ]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    if (localStorage.getItem('authToken')?.length == 0)
+      this.router.navigate(['/login'])
   }
 
   storeRegister(){
